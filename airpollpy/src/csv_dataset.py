@@ -14,6 +14,7 @@ def clean_pm10_timeseries(path: str) -> DataFrame:
 
     # clean invalid rows
     df = df[df['Validity'] != -1]
+    df.drop('Validity', axis=1, inplace=True)
 
     return df
 
