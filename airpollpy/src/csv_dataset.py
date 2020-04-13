@@ -2,8 +2,10 @@ import pandas as pd
 from pandas import DataFrame
 
 
-def get_dataframe(path: str) -> DataFrame:
-    return pd.read_csv(path)
+def get_dataframe(path: str, encoding=None) -> DataFrame:
+    if not encoding:
+        encoding = 'UTF-8'
+    return pd.read_csv(path, encoding=encoding)
 
 
 def clean_pm10_timeseries(path: str) -> DataFrame:
