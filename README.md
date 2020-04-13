@@ -7,6 +7,13 @@ Then start cleaning the data sets and using them for visualization.
 And potentially something more elaborate later that would require more data to start thinking about correlation and models.
 
 
+## Data info
+I started retrieving the data for London using the [Bloomsbury monitoring station](https://uk-air.defra.gov.uk/networks/site-info?site_id=CLL2)
+which code corresponds to GB0566A in the csv files.
+Potential amelioration would be to take the data from all stations for this city and use a mean.
+Still have to find a proper way to retrieve all the data and decide how to store them (original and/or cleaned set?).
+
+
 ## Dependencies
 - [Pandas](https://pandas.pydata.org/)
 
