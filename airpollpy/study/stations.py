@@ -1,6 +1,9 @@
-import pandas as pd
+from enum import Enum
 from pandas import DataFrame
 from src import csv_dataset
+
+
+FilterMode = Enum('FilterMode', 'max min')
 
 
 def get_stations_data(path: str) -> DataFrame:
@@ -8,20 +11,27 @@ def get_stations_data(path: str) -> DataFrame:
     return df
 
 
-def get_worst_stations(path: str) -> DataFrame:
+def get_stations_filtered(df: DataFrame, filter_mode: FilterMode) -> DataFrame:
     """
-    :param path: path of the data file
-    :return: the data set limited to the worst traffic urban station per city
+    :param filter_mode: way to filter the stations
+    :param df: stations data frame
+    :return: the data set limited to the worst station per city
     """
 
-    df = get_stations_data(path)
-    df = df[df['type_of_station'] == 'Traffic']
-    df = df[df['station_type_of_area'] == 'urban']
-
-    # keep only worse values for criteria
-    df = df.loc[df.groupby(["city_name"])["statistic_value (µg/m3)"].idxmax()]
-
+    if filter_mode == FilterMode.max:
+        df = df.loc[df.groupby(["city_name"])["statistic_value (µg/m3)"].idxmax()]
+    elif filter_mode == FilterMode.min:
+        df = df.loc[df.groupby(["city_name"])["statistic_value (µg/m3)"].idxmin()]
     return df
 
+
+def get_worst_stations(path: str) -> DataFrame:
+    df = get_stations_data(path)
+    return get_stations_filtered(df, FilterMode.max)
+
+
+def get_best_stations(path: str) -> DataFrame:
+    df = get_stations_data(path)
+    return get_stations_filtered(df, FilterMode.min)
 
 
