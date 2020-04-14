@@ -1,7 +1,6 @@
 from pandas import DataFrame
 from src import csv_dataset
 
-
 STATISTIC_VALUE = "statistic_value (µg/m3)"
 
 
@@ -34,7 +33,7 @@ def get_best_stations(path: str, pollutant: str) -> DataFrame:
 
 def get_mean_per_city(path: str, pollutant: str) -> DataFrame:
     df = get_stations_data(path)
-    df = df.groupby(["country iso code", "city_name"])[STATISTIC_VALUE].mean().to_frame()
+    df = df.groupby(["country iso code", "city_name"])[STATISTIC_VALUE].mean().reset_index()
     df.rename({STATISTIC_VALUE: 'mean ' + pollutant + ' (µg/m3)'}, axis=1, inplace=True)
     return df
 
