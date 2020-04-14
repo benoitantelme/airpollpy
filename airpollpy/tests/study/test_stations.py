@@ -1,5 +1,7 @@
-from study.stations import get_stations_data
-from study.stations import get_worst_stations
+from src.stations import get_stations_data
+from src.stations import get_worst_stations
+from src.stations import get_best_stations
+from src.stations import get_mean_per_city
 
 path1 = "../../data/main/cleaned/others/2013_"
 path2 = "_monitoring_stations.csv"
@@ -16,7 +18,7 @@ def get_worst_stations_helper(pollutant: str, cities: int):
     df = get_stations_data(path)
     size = len(df)
 
-    df = get_worst_stations(path)
+    df = get_worst_stations(path, pollutant)
     assert df is not None
     assert len(df) < size
     # number of worst station/city for a pollutant
@@ -44,8 +46,22 @@ def test_get_best_no2_stations():
     df = get_stations_data(path)
     size = len(df)
 
-    df = get_worst_stations(path)
+    df = get_best_stations(path, 'no2')
     assert df is not None
     assert len(df) < size
     # number of best station/city for 'no2'
     assert len(df) == 557
+
+
+def test_get_mean_per_city():
+    path = path1 + 'pm10' + path2
+    df = get_stations_data(path)
+    size = len(df)
+
+    df = get_mean_per_city(path, 'pm10')
+    assert df is not None
+    assert len(df) < size
+    # number of best station/city for 'no2'
+    assert len(df) == 525
+    assert len(df.columns) == 1
+
