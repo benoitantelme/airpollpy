@@ -20,9 +20,9 @@ def get_stations_filtered(df: DataFrame, filter_mode: FilterMode, pollutant: str
     """
 
     if filter_mode == FilterMode.max:
-        df = df.loc[df.groupby("city_name")["statistic_value (µg/m3)"].idxmax()]
+        df = df.loc[df.groupby(["city_name"])["statistic_value (µg/m3)"].idxmax()]
     elif filter_mode == FilterMode.min:
-        df = df.loc[df.groupby("city_name")["statistic_value (µg/m3)"].idxmin()]
+        df = df.loc[df.groupby(["city_name"])["statistic_value (µg/m3)"].idxmin()]
     else:
         raise ValueError(filter_mode + ' is not an expected value')
 
@@ -42,7 +42,7 @@ def get_best_stations(path: str, pollutant: str) -> DataFrame:
 
 def get_mean_per_city(path: str, pollutant: str) -> DataFrame:
     df = get_stations_data(path)
-    df = df.groupby("city_name")["statistic_value (µg/m3)"].mean().to_frame()
+    df = df.groupby(["country iso code", "city_name"])["statistic_value (µg/m3)"].mean().to_frame()
     df.rename({'statistic_value (µg/m3)': 'mean ' + pollutant + ' (µg/m3)'}, axis=1, inplace=True)
     return df
 
