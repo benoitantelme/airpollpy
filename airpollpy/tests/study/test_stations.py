@@ -11,49 +11,30 @@ def test_get_stations_data():
     assert df is not None
 
 
-def test_get_worst_pm10_stations():
-    path = path1 + 'pm10' + path2
+def get_worst_stations_helper(pollutant: str, cities: int):
+    path = path1 + pollutant + path2
     df = get_stations_data(path)
     size = len(df)
 
     df = get_worst_stations(path)
     assert df is not None
     assert len(df) < size
-    # number of ''traffic urban'' cities for pm10
-    assert len(df) == 317
+    # number of ''traffic urban'' cities for a pollutant
+    assert len(df) == cities
+
+
+def test_get_worst_pm10_stations():
+    get_worst_stations_helper('pm10', 317)
 
 
 def test_get_worst_pm25_stations():
-    path = path1 + 'pm25' + path2
-    df = get_stations_data(path)
-    size = len(df)
-
-    df = get_worst_stations(path)
-    assert df is not None
-    assert len(df) < size
-    # number of ''traffic urban'' cities for pm25
-    assert len(df) == 135
+    get_worst_stations_helper('pm25', 135)
 
 
 def test_get_worst_no2_stations():
-    path = path1 + 'no2' + path2
-    df = get_stations_data(path)
-    size = len(df)
-
-    df = get_worst_stations(path)
-    assert df is not None
-    assert len(df) < size
-    # number of ''traffic urban'' cities for no2
-    assert len(df) == 343
+    get_worst_stations_helper('no2', 343)
 
 
 def test_get_worst_o3_stations():
-    path = path1 + 'o3' + path2
-    df = get_stations_data(path)
-    size = len(df)
+    get_worst_stations_helper('o3', 98)
 
-    df = get_worst_stations(path)
-    assert df is not None
-    assert len(df) < size
-    # number of ''traffic urban'' cities for o3
-    assert len(df) == 98
