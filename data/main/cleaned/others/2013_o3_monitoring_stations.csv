@@ -1,0 +1,704 @@
+country iso code,city_name,station_european_code,type_of_station,station_type_of_area,component_caption,statistic_value (µg/m3),above_AQG?
+AT,Klagenfurt,AT2KA41,Background,suburban,O3,140.1,1
+AT,Klagenfurt,AT2KA71,Background,urban,O3,138.3,1
+AT,Linz,AT4S416,Background,urban,O3,148.6,1
+AT,Salzburg,AT51066,Traffic,urban,O3,148.9,1
+AT,Salzburg,AT51200,Background,urban,O3,154.6,1
+AT,Graz,AT60018,Background,urban,O3,155.8,1
+AT,Graz,AT60036,Background,suburban,O3,148.6,1
+AT,Graz,AT60138,Background,suburban,O3,152.9,1
+AT,Graz,AT60170,Background,urban,O3,152.2,1
+AT,Innsbruck,AT72106,Traffic,urban,O3,132.9,1
+AT,Innsbruck,AT72113,Background,suburban,O3,151.2,1
+AT,Wien,AT900ZA,Background,urban,O3,163.2,1
+AT,Wien,AT90LAA,Background,urban,O3,165.5,1
+AT,Wien,AT90LOB,Background,suburban,O3,171.5,1
+AT,Wien,AT9JAEG,Background,suburban,O3,179.8,1
+AT,Wien,AT9STEF,Background,urban,O3,145.0,1
+BE,Bruxelles / Brussel,BETB004,Traffic,urban,O3,198.7,1
+BE,Bruxelles / Brussel,BETB006,Background,urban,O3,172.3,1
+BE,Bruxelles / Brussel,BETB011,Background,suburban,O3,199.9,1
+BE,Mons,BETN070,Background,suburban,O3,153.3,1
+BE,Bruxelles / Brussel,BETR001,Traffic,urban,O3,168.9,1
+BE,Bruxelles / Brussel,BETR012,Background,suburban,O3,188.5,1
+BE,Liège,BETR221,Background,urban,O3,167.5,1
+BE,Liège,BETR222,Background,suburban,O3,173.0,1
+BE,Charleroi,BETR502,Background,suburban,O3,185.1,1
+BE,Gent,BETR701,Background,urban,O3,150.3,1
+BE,Antwerpen,BETR801,Traffic,urban,O3,173.9,1
+BE,Bruxelles / Brussel,BETWOL1,Traffic,suburban,O3,179.4,1
+BG,Shumen,BG0038A,Background,urban,O3,136.6,1
+BG,Sofia,BG0040A,Background,suburban,O3,129.8,1
+BG,Vratsa,BG0043A,Background,urban,O3,127.6,1
+BG,Burgas,BG0044A,Background,suburban,O3,159.2,1
+BG,Ruse,BG0045A,Background,suburban,O3,113.1,1
+BG,Sofia,BG0050A,Background,suburban,O3,122.9,1
+BG,Plovdiv,BG0051A,Background,urban,O3,150.4,1
+BG,Sofia,BG0052A,Background,suburban,O3,118.9,1
+BG,Stara Zagora,BG0055A,Traffic,urban,O3,121.9,1
+BG,Burgas,BG0056A,Background,suburban,O3,124.7,1
+BG,Blagoevgrad,BG0058A,Background,suburban,O3,135.4,1
+BG,Sofia,BG0073A,Traffic,urban,O3,141.2,1
+BG,Varna,BG0075A,background,urban,O3,119.8,1
+CH,Zürich,CH0010A,Background,urban,O3,158.2,1
+CH,Lugano,CH0011A,Background,urban,O3,197.4,1
+CH,Zürich,CH0013A,Traffic,urban,O3,146.3,1
+CH,Winterthur,CH0014A,Background,urban,O3,148.9,1
+CH,Basel,CH0017A,Background,urban,O3,149.5,1
+CH,Bern,CH0020A,Traffic,urban,O3,154.3,1
+CH,Zürich,CH0021A,Traffic,urban,O3,138.7,1
+CH,Lausanne,CH0028A,Traffic,urban,O3,132.9,1
+CH,Bern,CH0031A,Traffic,urban,O3,132.1,1
+CH,St. Gallen,CH0042A,Traffic,urban,O3,146.8,1
+CH,Lugano,CH0043A,Background,suburban,O3,192.4,1
+CH,Genève,CH0048A,Traffic,urban,O3,131.7,1
+CH,Genève,CH0049A,Background,urban,O3,143.6,1
+CY,Lefkosia,CY0004A,Traffic,urban,O3,129.9,1
+CZ,Praha,CZ0AKOB,Background,suburban,O3,178.9,1
+CZ,Praha,CZ0ALIB,Background,suburban,O3,174.7,1
+CZ,Praha,CZ0ARIE,Background,urban,O3,171.1,1
+CZ,Praha,CZ0ASTO,Background,urban,O3,165.4,1
+CZ,Praha,CZ0ASUC,Background,suburban,O3,179.3,1
+CZ,Praha,CZ0AVYN,Traffic,urban,O3,156.4,1
+CZ,Brno,CZ0BBNY,Background,suburban,O3,167.0,1
+CZ,Ceské Budejovice,CZ0CCBD,Background,urban,O3,148.5,1
+CZ,Pardubice,CZ0EPAU,Background,urban,O3,150.1,1
+CZ,Hradec Králové,CZ0HHKO,Background,suburban,O3,152.3,1
+CZ,Jihlava,CZ0JJIH,Background,urban,O3,154.8,1
+CZ,Liberec,CZ0LLIM,Background,urban,O3,148.0,1
+CZ,Plzen,CZ0PPLA,Traffic,urban,O3,150.7,1
+CZ,Plzen,CZ0PPLB,Background,urban,O3,113.3,1
+CZ,Plzen,CZ0PPLL,Background,urban,O3,139.1,1
+CZ,Plzen,CZ0PPLV,Background,suburban,O3,165.5,1
+CZ,Kladno,CZ0SKLM,Background,urban,O3,164.0,1
+CZ,Karviná,CZ0TKAR,Background,urban,O3,161.0,1
+CZ,Ostrava,CZ0TOFF,Background,urban,O3,165.4,1
+CZ,Most,CZ0UMOM,Background,urban,O3,161.4,1
+CZ,Ústí nad Labem,CZ0UULK,Background,suburban,O3,180.9,1
+CZ,Ústí nad Labem,CZ0UULM,Background,urban,O3,161.5,1
+CZ,Zlín,CZ0ZZLN,Background,suburban,O3,139.7,1
+DE,Potsdam,DEBB021,Background,urban,O3,156.9,1
+DE,Frankfurt (Oder),DEBB042,Background,suburban,O3,166.7,1
+DE,Brandenburg an der Havel,DEBB055,Background,suburban,O3,144.6,1
+DE,Cottbus,DEBB064,Background,urban,O3,159.9,1
+DE,Potsdam,DEBB075,Background,suburban,O3,153.4,1
+DE,Berlin,DEBE010,Background,urban,O3,154.6,1
+DE,Berlin,DEBE034,Background,urban,O3,152.2,1
+DE,Berlin,DEBE051,Background,suburban,O3,167.2,1
+DE,Mannheim,DEBW006,Background,urban,O3,178.2,1
+DE,Heidelberg,DEBW009,Traffic,urban,O3,154.5,1
+DE,Stuttgart,DEBW013,Background,urban,O3,158.3,1
+DE,Heilbronn,DEBW015,Traffic,suburban,O3,158.3,1
+DE,Ulm,DEBW019,Background,urban,O3,138.1,1
+DE,Ludwigsburg,DEBW024,Background,suburban,O3,174.5,1
+DE,Reutlingen,DEBW027,Background,urban,O3,144.4,1
+DE,Pforzheim,DEBW033,Traffic,urban,O3,172.2,1
+DE,Friedrichshafen,DEBW038,Traffic,urban,O3,157.8,1
+DE,Villingen-Schwenningen,DEBW039,Background,suburban,O3,150.4,1
+DE,Konstanz,DEBW052,Background,urban,O3,150.2,1
+DE,Karlsruhe,DEBW081,Background,urban,O3,165.9,1
+DE,Freiburg im Breisgau,DEBW084,Background,urban,O3,167.2,1
+DE,Tübingen,DEBW107,Background,suburban,O3,145.5,1
+DE,Aschaffenburg,DEBY005,Background,suburban,O3,146.4,1
+DE,Augsburg,DEBY007,Background,urban,O3,140.2,1
+DE,Kempten (Allgäu),DEBY031,Background,suburban,O3,134.4,1
+DE,München,DEBY037,Traffic,urban,O3,116.4,1
+DE,München,DEBY039,Background,urban,O3,151.2,1
+DE,Neu-Ulm,DEBY052,Background,urban,O3,147.8,1
+DE,Nürnberg,DEBY058,Background,urban,O3,153.2,1
+DE,Schweinfurt,DEBY068,Traffic,urban,O3,135.8,1
+DE,Würzburg,DEBY077,Background,suburban,O3,139.9,1
+DE,München,DEBY089,Background,suburban,O3,153.4,1
+DE,Augsburg,DEBY099,Background,suburban,O3,134.7,1
+DE,Erlangen,DEBY113,Background,suburban,O3,196.3,1
+DE,Bremen,DEHB001,Background,urban,O3,149.2,1
+DE,Bremen,DEHB002,Background,urban,O3,139.0,1
+DE,Bremen,DEHB004,Background,urban,O3,138.2,1
+DE,Bremerhaven,DEHB005,Background,urban,O3,147.2,1
+DE,Darmstadt,DEHE001,Background,urban,O3,167.9,1
+DE,Frankfurt am Main,DEHE005,Traffic,urban,O3,148.0,1
+DE,Frankfurt am Main,DEHE008,Background,urban,O3,151.9,1
+DE,Hanau,DEHE011,Traffic,urban,O3,152.3,1
+DE,Kassel,DEHE013,Background,urban,O3,156.9,1
+DE,Wetzlar,DEHE020,Traffic,urban,O3,134.0,1
+DE,Wiesbaden,DEHE022,Background,urban,O3,175.9,1
+DE,Marburg,DEHE030,Background,urban,O3,205.3,1
+DE,Fulda,DEHE058,Background,urban,O3,151.1,1
+DE,Hamburg,DEHH008,Background,urban,O3,121.5,1
+DE,Hamburg,DEHH021,Background,suburban,O3,133.0,1
+DE,Hamburg,DEHH033,Background,urban,O3,132.5,1
+DE,Hamburg,DEHH047,Background,suburban,O3,147.7,1
+DE,Hamburg,DEHH049,Background,suburban,O3,148.0,1
+DE,Hamburg,DEHH050,Background,suburban,O3,140.6,1
+DE,Neubrandenburg,DEMV003,Traffic,urban,O3,134.1,1
+DE,Rostock,DEMV021,Background,urban,O3,118.9,1
+DE,Rostock,DEMV022,Traffic,urban,O3,104.9,1
+DE,Braunschweig,DENI011,Background,suburban,O3,148.9,1
+DE,Wolfsburg,DENI020,Background,suburban,O3,144.9,1
+DE,Osnabrück,DENI038,Background,urban,O3,158.9,1
+DE,Göttingen,DENI042,Background,suburban,O3,146.2,1
+DE,Hannover,DENI054,Background,urban,O3,145.5,1
+DE,Lüneburg,DENI062,Background,suburban,O3,141.1,1
+DE,Dortmund,DENW008,Background,urban,O3,134.5,1
+DE,Mülheim a.d.Ruhr,DENW038,Background,urban,O3,165.5,1
+DE,Krefeld,DENW042,Background,urban,O3,171.5,1
+DE,Köln,DENW053,Background,urban,O3,170.0,1
+DE,Köln,DENW059,Background,suburban,O3,144.3,1
+DE,Bielefeld,DENW067,Background,urban,O3,135.7,1
+DE,Düsseldorf,DENW071,Background,urban,O3,141.8,1
+DE,Leverkusen,DENW079,Background,suburban,O3,162.2,1
+DE,Solingen,DENW080,Background,suburban,O3,170.8,1
+DE,Aachen,DENW094,Background,urban,O3,164.7,1
+DE,Münster,DENW095,Background,urban,O3,165.1,1
+DE,Mönchengladbach,DENW096,Background,suburban,O3,158.3,1
+DE,Wuppertal,DENW114,Background,urban,O3,158.8,1
+DE,Essen,DENW247,Background,suburban,O3,168.6,1
+DE,Ludwigshafen am Rhein,DERP001,Background,urban,O3,166.4,1
+DE,Mainz,DERP007,Background,urban,O3,166.5,1
+DE,Kaiserslautern,DERP019,Background,urban,O3,157.6,1
+DE,Koblenz,DERP024,Traffic,urban,O3,137.1,1
+DE,Trier,DERP040,Background,urban,O3,152.3,1
+DE,Lübeck,DESH023,Background,urban,O3,145.8,1
+DE,Kiel,DESH033,Background,urban,O3,124.9,1
+DE,Saarbrücken,DESL011,Background,urban,O3,156.5,1
+DE,Saarbrücken,DESL012,Background,urban,O3,160.6,1
+DE,Saarbrücken,DESL020,Traffic,urban,O3,122.3,1
+DE,Chemnitz,DESN011,Background,urban,O3,166.7,1
+DE,Leipzig,DESN059,Background,urban,O3,157.5,1
+DE,Dresden,DESN061,Traffic,urban,O3,140.0,1
+DE,Plauen,DESN081,Background,suburban,O3,156.3,1
+DE,Leipzig,DESN082,Background,suburban,O3,154.6,1
+DE,Dresden,DESN092,Background,urban,O3,169.9,1
+DE,Halle an der Saale,DEST050,Background,urban,O3,162.3,1
+DE,Magdeburg,DEST076,Traffic,urban,O3,127.0,1
+DE,Magdeburg,DEST077,Background,urban,O3,156.1,1
+DE,Gera,DETH009,Background,urban,O3,140.3,1
+DE,Erfurt,DETH020,Background,urban,O3,142.2,1
+DE,Jena,DETH041,Background,urban,O3,149.7,1
+DK,København,DK0034A,Traffic,urban,O3,91.1,0
+DK,København,DK0045A,Background,urban,O3,121.0,1
+DK,Odense,DK0046A,Background,urban,O3,142.1,1
+DK,Århus,DK0052A,Background,urban,O3,116.6,1
+DK,Aalborg,DK0053A,Background,urban,O3,115.7,1
+EE,Tallinn,EE0018A,Background,urban,O3,111.4,1
+EE,Tallinn,EE0020A,Traffic,urban,O3,100.0,0
+EE,Tartu,EE0021A,Background,urban,O3,124.0,1
+EE,Narva,EE0022A,Background,urban,O3,123.7,1
+ES,Madrid,ES0118A,Traffic,urban,O3,152.5,1
+ES,Madrid,ES0124A,Background,urban,O3,167.9,1
+ES,Madrid,ES0125A,Background,urban,O3,161.5,1
+ES,Madrid,ES0126A,Background,urban,O3,171.8,1
+ES,Avilés,ES0880A,Traffic,urban,O3,81.9,0
+ES,Sevilla,ES0890A,Traffic,urban,O3,140.8,1
+ES,Terrassa,ES1018A,Traffic,urban,O3,140.5,1
+ES,Zaragoza,ES1044A,Traffic,suburban,O3,115.0,1
+ES,Zaragoza,ES1047A,Traffic,urban,O3,124.3,1
+ES,Ourense,ES1096A,Traffic,urban,O3,142.0,1
+ES,Manresa,ES1125A,Traffic,urban,O3,142.1,1
+ES,Vigo,ES1137A,Traffic,urban,O3,119.8,1
+ES,A Coruña,ES1138A,Traffic,urban,O3,121.0,1
+ES,Badalona,ES1148A,Traffic,suburban,O3,143.4,1
+ES,Gandia,ES1182A,Traffic,urban,O3,130.6,1
+ES,Madrid,ES1193A,Background,suburban,O3,175.0,1
+ES,Reus,ES1208A,Traffic,suburban,O3,142.1,1
+ES,Lleida,ES1225A,Traffic,urban,O3,139.4,1
+ES,Sant Cugat del Vallès,ES1231A,Background,urban,O3,142.9,1
+ES,Valencia,ES1239A,Traffic,urban,O3,108.9,1
+ES,Bilbao,ES1244A,Traffic,urban,O3,108.6,1
+ES,Sabadell,ES1262A,Traffic,urban,O3,137.9,1
+ES,Oviedo,ES1268A,Traffic,urban,O3,119.5,1
+ES,Oviedo,ES1269A,Traffic,urban,O3,110.6,1
+ES,Gijón,ES1270A,Traffic,urban,O3,105.6,1
+ES,Gijón,ES1271A,Traffic,urban,O3,97.1,0
+ES,Gijón,ES1272A,Traffic,urban,O3,106.3,1
+ES,Vilanova i la Geltrú,ES1339A,Traffic,urban,O3,139.1,1
+ES,Gijón,ES1358A,Traffic,urban,O3,114.5,1
+ES,Almería,ES1393A,Traffic,urban,O3,116.1,1
+ES,Madrid,ES1422A,Background,urban,O3,158.3,1
+ES,Avilés,ES1424A,Traffic,urban,O3,98.5,0
+ES,Barcelona,ES1438A,Traffic,urban,O3,113.8,1
+ES,Sevilla,ES1450A,Background,suburban,O3,153.6,1
+ES,Pontevedra,ES1464A,Traffic,urban,O3,140.0,1
+ES,Pamplona/Iruña,ES1472A,Background,urban,O3,131.4,1
+ES,Cádiz,ES1479A,Traffic,urban,O3,129.8,1
+ES,Barcelona,ES1480A,Traffic,urban,O3,122.4,1
+ES,Madrid,ES1521A,Traffic,urban,O3,169.3,1
+ES,Santander,ES1529A,Background,urban,O3,117.1,1
+ES,Guadalajara,ES1537A,Background,urban,O3,125.1,1
+ES,Alcalá de Henares,ES1563A,Traffic,urban,O3,149.6,1
+ES,Leganés,ES1567A,Traffic,urban,O3,160.9,1
+ES,Móstoles,ES1568A,Background,urban,O3,155.9,1
+ES,Oviedo,ES1572A,Background,urban,O3,135.9,1
+ES,San Fernando,ES1593A,Background,suburban,O3,133.5,1
+ES,Badajoz,ES1601A,Background,urban,O3,102.4,1
+ES,Logroño,ES1602A,Background,urban,O3,138.4,1
+ES,Majadahonda,ES1612A,Background,suburban,O3,158.0,1
+ES,Cáceres,ES1615A,Background,urban,O3,118.1,1
+ES,Valencia,ES1619A,Background,urban,O3,108.3,1
+ES,Elche/Elx,ES1624A,Background,suburban,O3,136.9,1
+ES,Valladolid,ES1632A,Traffic,urban,O3,147.0,1
+ES,Murcia,ES1633A,Traffic,suburban,O3,125.3,1
+ES,Sevilla,ES1638A,Background,urban,O3,155.3,1
+ES,Zaragoza,ES1641A,Background,urban,O3,124.8,1
+ES,Sevilla,ES1644A,Background,urban,O3,172.6,1
+ES,Madrid,ES1645A,Background,urban,O3,177.4,1
+ES,Dos Hermanas,ES1653A,Background,urban,O3,142.0,1
+ES,Jaén,ES1656A,Background,urban,O3,136.3,1
+ES,Tarragona,ES1666A,Background,urban,O3,142.6,1
+ES,Benidorm,ES1675A,Background,suburban,O3,152.8,1
+ES,Barcelona,ES1679A,Background,urban,O3,133.9,1
+ES,Rubí,ES1684A,Background,urban,O3,194.0,1
+ES,San Sebastián/Donostia,ES1697A,Traffic,urban,O3,111.8,1
+ES,Bilbao,ES1713A,Background,urban,O3,134.4,1
+ES,Pamplona/Iruña,ES1740A,Traffic,urban,O3,134.3,1
+ES,Pamplona/Iruña,ES1747A,Background,urban,O3,125.6,1
+ES,Málaga,ES1750A,Background,urban,O3,126.0,1
+ES,Málaga,ES1751A,Background,suburban,O3,133.4,1
+ES,Torrejón de Ardoz,ES1752A,Background,urban,O3,159.4,1
+ES,Jerez de la Frontera,ES1781A,Background,urban,O3,129.4,1
+ES,Almería,ES1786A,Background,suburban,O3,141.3,1
+ES,Córdoba,ES1800A,Background,suburban,O3,153.9,1
+ES,Mataró,ES1816A,Background,urban,O3,150.0,1
+ES,Toledo,ES1818A,Background,suburban,O3,178.3,1
+ES,Jaén,ES1824A,Background,suburban,O3,144.1,1
+ES,Elche/Elx,ES1849A,Traffic,urban,O3,136.5,1
+ES,Barcelona,ES1856A,Background,urban,O3,145.6,1
+ES,Ciudad Real,ES1857A,Background,suburban,O3,126.4,1
+ES,Talavera de la Reina,ES1859A,Background,suburban,O3,105.8,1
+ES,Ferrol,ES1867A,Traffic,urban,O3,121.6,1
+ES,Santiago de Compostela,ES1868A,Background,urban,O3,156.9,1
+ES,Coslada,ES1869A,Traffic,urban,O3,131.5,1
+ES,Valencia,ES1885A,Background,urban,O3,122.6,1
+ES,Salamanca,ES1889A,Background,suburban,O3,141.9,1
+ES,Alcorcón,ES1890A,Background,urban,O3,170.4,1
+ES,Granollers,ES1891A,Traffic,urban,O3,147.4,1
+ES,Badalona,ES1892A,Traffic,urban,O3,148.6,1
+ES,Santiago de Compostela,ES1901A,Traffic,urban,O3,164.6,1
+ES,Viladecans,ES1903A,Traffic,suburban,O3,152.8,1
+ES,Lugo,ES1905A,Traffic,urban,O3,136.5,1
+ES,Valencia,ES1912A,Traffic,urban,O3,110.0,1
+ES,Elda,ES1914A,Background,suburban,O3,133.9,1
+ES,Alicante/Alacant,ES1915A,Background,urban,O3,144.8,1
+ES,Telde,ES1919A,Background,urban,O3,132.1,1
+ES,Cartagena,ES1921A,Background,urban,O3,124.3,1
+ES,Palencia,ES1922A,Traffic,urban,O3,157.8,1
+ES,Granada,ES1924A,Background,urban,O3,135.9,1
+ES,Valencia,ES1926A,Traffic,urban,O3,95.0,0
+ES,Zamora,ES1927A,Traffic,urban,O3,152.6,1
+ES,Madrid,ES1939A,Background,urban,O3,162.0,1
+ES,Madrid,ES1941A,Background,urban,O3,173.5,1
+ES,Madrid,ES1943A,Traffic,urban,O3,153.0,1
+ES,Madrid,ES1945A,Background,suburban,O3,168.6,1
+ES,Madrid,ES1946A,Background,suburban,O3,189.4,1
+ES,Madrid,ES1947A,Background,urban,O3,178.9,1
+ES,Las Palmas,ES1953A,Background,urban,O3,106.5,1
+ES,Arrecife,ES1955A,Background,urban,O3,126.8,1
+ES,A Coruña,ES1957A,Traffic,urban,O3,135.0,1
+ES,Ferrol,ES1960A,Background,suburban,O3,159.5,1
+ES,Valencia,ES1970A,Traffic,urban,O3,121.6,1
+ES,Gijón,ES1974A,Background,suburban,O3,132.9,1
+ES,León,ES1988A,Background,suburban,O3,159.4,1
+ES,Barcelona,ES1992A,Background,urban,O3,138.1,1
+ES,Santa Cruz de Tenerife,ES2003A,Traffic,suburban,O3,135.1,1
+ES,Telde,ES2004A,Traffic,suburban,O3,131.4,1
+ES,Santa Cruz de Tenerife,ES2021A,Background,urban,O3,142.8,1
+ES,Getafe,ES2028A,Traffic,urban,O3,152.0,1
+ES,Marbella,ES2030A,Traffic,urban,O3,129.5,1
+FI,Vantaa / Vanda,FI00226,Background,urban,O3,118.1,1
+FI,Helsinki / Helsingfors,FI00425,Background,urban,O3,127.3,1
+FI,Helsinki / Helsingfors,FI00564,Traffic,urban,O3,110.3,1
+FI,Helsinki / Helsingfors,FI00781,Background,suburban,O3,121.4,1
+FR,Metz,FR01011,Background,urban,O3,171.5,1
+FR,Metz,FR01018,Background,suburban,O3,162.5,1
+FR,Martigues,FR02004,Background,urban,O3,171.3,1
+FR,Aix-en-Provence,FR02019,Background,urban,O3,152.7,1
+FR,Aix-en-Provence,FR03029,Background,urban,O3,170.5,1
+FR,Aubagne,FR03032,Background,urban,O3,176.2,1
+FR,Aubagne,FR03037,Background,suburban,O3,162.5,1
+FR,Marseille,FR03043,Background,urban,O3,166.2,1
+FR,Aix-en-Provence,FR03048,Background,suburban,O3,168.0,1
+FR,Toulon,FR03060,Background,urban,O3,151.7,1
+FR,Toulon,FR03062,Background,urban,O3,160.5,1
+FR,Toulon,FR03063,Background,urban,O3,157.2,1
+FR,Toulon,FR03064,Background,suburban,O3,149.4,1
+FR,Toulon,FR03069,Background,urban,O3,178.4,1
+FR,Avignon,FR03080,Background,urban,O3,154.9,1
+FR,Paris,FR04004,Background,urban,O3,142.2,1
+FR,Cergy-Pontoise,FR04023,Background,urban,O3,163.4,1
+FR,Paris,FR04037,Background,urban,O3,157.2,1
+FR,Mantes en Yvelines,FR04063,Background,suburban,O3,166.8,1
+FR,Melun,FR04069,Background,suburban,O3,159.3,1
+FR,Marne la Vallée,FR04098,Background,urban,O3,164.3,1
+FR,Paris,FR04143,Background,urban,O3,150.6,1
+FR,CA Sénart - Val de Seine,FR04149,Background,urban,O3,177.8,1
+FR,Le Havre,FR05074,Background,urban,O3,149.7,1
+FR,Le Havre,FR05079,Background,suburban,O3,152.9,1
+FR,Douai,FR06003,Background,urban,O3,151.1,1
+FR,Clermont-Ferrand,FR07001,Background,suburban,O3,159.1,1
+FR,Clermont-Ferrand,FR07004,Background,urban,O3,156.4,1
+FR,Clermont-Ferrand,FR07009,Background,urban,O3,150.5,1
+FR,Montpellier,FR08016,Background,urban,O3,143.1,1
+FR,Montpellier,FR08017,Background,suburban,O3,166.9,1
+FR,Nimes,FR08614,Background,urban,O3,153.4,1
+FR,Nimes,FR08617,Background,suburban,O3,150.1,1
+FR,Perpignan,FR08712,Background,suburban,O3,148.1,1
+FR,Perpignan,FR08714,Background,urban,O3,141.3,1
+FR,La Rochelle,FR09003,Background,urban,O3,138.2,1
+FR,La Rochelle,FR09008,Background,suburban,O3,150.8,1
+FR,Poitiers,FR09009,Background,urban,O3,133.3,1
+FR,Poitiers,FR09015,Background,suburban,O3,155.0,1
+FR,Angoulème,FR09016,Background,suburban,O3,142.8,1
+FR,Niort,FR09019,Background,urban,O3,151.1,1
+FR,Angoulème,FR09103,Background,urban,O3,136.2,1
+FR,Dunkerque,FR10007,Background,suburban,O3,104.9,1
+FR,Calais,FR10025,Background,suburban,O3,125.3,1
+FR,Calais,FR10026,Background,urban,O3,119.3,1
+FR,Dunkerque,FR10029,Background,urban,O3,136.0,1
+FR,Boulogne-sur-mer,FR10032,Background,suburban,O3,143.6,1
+FR,Lille,FR11016,Background,urban,O3,157.5,1
+FR,Lille,FR11022,Background,urban,O3,165.8,1
+FR,Lille,FR11026,Background,suburban,O3,167.8,1
+FR,Lille,FR11030,Background,suburban,O3,154.3,1
+FR,Lille,FR11033,Background,suburban,O3,175.9,1
+FR,Toulouse,FR12001,Background,suburban,O3,156.9,1
+FR,Toulouse,FR12004,Background,urban,O3,169.7,1
+FR,Albi,FR12017,Background,suburban,O3,135.3,1
+FR,Toulouse,FR12021,Background,urban,O3,160.6,1
+FR,Albi,FR12026,Background,urban,O3,129.3,1
+FR,Toulouse,FR12030,Background,urban,O3,162.0,1
+FR,Tarbes,FR12052,Background,urban,O3,143.1,1
+FR,Montbelliard,FR13012,Background,suburban,O3,147.4,1
+FR,Reims,FR14010,Background,suburban,O3,168.3,1
+FR,Reims,FR14012,Background,urban,O3,179.2,1
+FR,Châlons-en-Champagne,FR14022,Background,suburban,O3,161.9,1
+FR,Troyes,FR14031,Background,urban,O3,160.5,1
+FR,Troyes,FR14032,Background,suburban,O3,160.2,1
+FR,Troyes,FR14033,Background,urban,O3,151.1,1
+FR,Charleville-Mézières,FR14051,Background,urban,O3,161.1,1
+FR,Grenoble,FR15017,Background,urban,O3,150.3,1
+FR,Grenoble,FR15038,Background,urban,O3,139.3,1
+FR,Grenoble,FR15045,Background,suburban,O3,157.6,1
+FR,Strasbourg,FR16029,Background,urban,O3,170.6,1
+FR,Strasbourg,FR16041,Background,suburban,O3,165.7,1
+FR,Colmar,FR16064,Background,suburban,O3,167.7,1
+FR,Mulhouse,FR16065,Background,suburban,O3,160.8,1
+FR,Mulhouse,FR16066,Background,urban,O3,155.8,1
+FR,Besançon,FR17023,Background,suburban,O3,146.7,1
+FR,Saint-Quentin,FR18008,Background,suburban,O3,154.8,1
+FR,Creil,FR18019,Background,suburban,O3,142.2,1
+FR,Amiens,FR18035,Background,suburban,O3,142.3,1
+FR,Beauvais,FR18036,Background,suburban,O3,148.0,1
+FR,Creil,FR18043,Background,urban,O3,137.4,1
+FR,Amiens,FR18053,Background,urban,O3,135.8,1
+FR,Rennes,FR19010,Background,urban,O3,147.8,1
+FR,Brest,FR19012,Background,urban,O3,137.5,1
+FR,Brest,FR19015,Background,urban,O3,136.9,1
+FR,Rennes,FR19017,Background,urban,O3,147.7,1
+FR,Lorient,FR19021,Background,urban,O3,139.2,1
+FR,Vannes,FR19031,Background,urban,O3,150.8,1
+FR,Lorient,FR19032,Background,urban,O3,135.2,1
+FR,Vannes,FR19033,Background,urban,O3,154.6,1
+FR,Saint-Brieuc,FR19061,Background,urban,O3,142.8,1
+FR,Lyon,FR20004,Background,urban,O3,166.4,1
+FR,Lyon,FR20017,Background,urban,O3,166.3,1
+FR,Lyon,FR20046,Background,urban,O3,168.2,1
+FR,Lyon,FR20062,Background,urban,O3,145.0,1
+FR,Caen,FR21001,Background,urban,O3,136.2,1
+FR,Caen,FR21019,Background,urban,O3,141.2,1
+FR,Cherbourg,FR21035,Background,urban,O3,125.3,1
+FR,Saint-Nazaire,FR23110,Background,urban,O3,151.7,1
+FR,Angers,FR23150,Background,urban,O3,163.0,1
+FR,Nantes,FR23157,Background,suburban,O3,159.1,1
+FR,Angers,FR23175,Background,suburban,O3,160.1,1
+FR,Le Mans,FR23182,Background,urban,O3,163.5,1
+FR,Nantes,FR23188,Background,urban,O3,156.2,1
+FR,Saint-Nazaire,FR23230,Background,suburban,O3,154.0,1
+FR,CA de Sophia-Antipolis,FR24007,Background,suburban,O3,174.7,1
+FR,Nice,FR24011,Background,urban,O3,193.1,1
+FR,Nice,FR24020,Background,urban,O3,159.9,1
+FR,Rouen,FR25036,Background,urban,O3,144.9,1
+FR,Evreux,FR25039,Background,urban,O3,147.3,1
+FR,Rouen,FR25040,Background,suburban,O3,154.4,1
+FR,Rouen,FR25043,Background,urban,O3,150.6,1
+FR,Dijon,FR26002,Background,urban,O3,160.8,1
+FR,Dijon,FR26005,Background,urban,O3,159.6,1
+FR,Dijon,FR26007,Background,urban,O3,145.1,1
+FR,Dijon,FR26010,Background,suburban,O3,158.4,1
+FR,Lens - Liévin,FR28010,Background,suburban,O3,169.1,1
+FR,Arras,FR28022,Background,suburban,O3,147.0,1
+FR,Saint-Etienne,FR29421,Background,suburban,O3,152.0,1
+FR,Roanne,FR29423,Background,urban,O3,148.0,1
+FR,Saint-Etienne,FR29424,Background,urban,O3,139.9,1
+FR,Saint-Etienne,FR29426,Background,urban,O3,142.1,1
+FR,Saint-Etienne,FR29439,Background,suburban,O3,158.9,1
+FR,Nancy,FR30021,Background,urban,O3,167.0,1
+FR,Nancy,FR30034,Background,urban,O3,153.4,1
+FR,Nancy,FR30037,Background,suburban,O3,162.4,1
+FR,Bordeaux,FR31001,Background,urban,O3,145.8,1
+FR,Bordeaux,FR31002,Background,urban,O3,148.5,1
+FR,Bordeaux,FR31007,Background,urban,O3,142.5,1
+FR,Pau,FR31013,Background,urban,O3,144.4,1
+FR,Pau,FR31014,Background,urban,O3,141.2,1
+FR,Bayonne,FR31016,Background,urban,O3,142.4,1
+FR,Bordeaux,FR31034,Background,suburban,O3,146.4,1
+FR,Chalon-sur-Saône,FR32002,Background,suburban,O3,156.5,1
+FR,Chalon-sur-Saône,FR32014,Background,urban,O3,154.5,1
+FR,Chambery,FR33101,Background,urban,O3,139.6,1
+FR,Chambery,FR33102,Background,urban,O3,140.9,1
+FR,Annecy,FR33201,Background,urban,O3,135.6,1
+FR,Annecy,FR33202,Background,urban,O3,135.5,1
+FR,Annemasse,FR33211,Background,urban,O3,140.0,1
+FR,Annemasse,FR33212,Background,urban,O3,145.4,1
+FR,Orléans,FR34017,Background,suburban,O3,160.2,1
+FR,Tours,FR34024,Background,urban,O3,165.4,1
+FR,Orléans,FR34029,Background,urban,O3,166.4,1
+FR,Bourges,FR34032,Background,urban,O3,158.4,1
+FR,Chartres,FR34041,Background,urban,O3,163.8,1
+FR,Châteauroux,FR34051,Background,urban,O3,142.0,1
+FR,Châteauroux,FR34056,Background,suburban,O3,143.8,1
+FR,Limoges,FR35003,Background,urban,O3,134.0,1
+FR,Brive-la-Gaillarde,FR35004,Background,urban,O3,133.5,1
+FR,Limoges,FR35007,Background,suburban,O3,146.2,1
+FR,Valence,FR36001,Background,suburban,O3,160.2,1
+FR,Valence,FR36002,Background,urban,O3,156.3,1
+FR,Saint Denis,FR38002,Background,suburban,O3,69.6,0
+FR,Saint Denis,FR38008,Background,urban,O3,67.5,0
+FR,Fort-de-France,FR39002,Background,suburban,O3,80.4,0
+FR,Ajaccio,FR41001,Background,urban,O3,135.4,1
+FR,Ajaccio,FR41007,Background,suburban,O3,148.6,1
+GB,Salford,GB0034R,Background,suburban,O3,123.7,1
+GB,London,GB0566A,Background,urban,O3,110.5,1
+GB,Belfast,GB0567A,Background,urban,O3,105.3,1
+GB,Newcastle upon Tyne,GB0568A,Background,urban,O3,104.7,1
+GB,Cardiff,GB0580A,Background,urban,O3,146.8,1
+GB,Leeds,GB0584A,Background,urban,O3,107.4,1
+GB,London,GB0586A,Background,suburban,O3,122.3,1
+GB,Southampton,GB0598A,Background,urban,O3,117.6,1
+GB,Manchester,GB0613A,Background,urban,O3,114.8,1
+GB,London,GB0620A,Background,urban,O3,137.0,1
+GB,Exeter,GB0640A,Traffic,urban,O3,118.0,1
+GB,London,GB0642A,Background,suburban,O3,118.0,1
+GB,Warwick,GB0643A,Background,urban,O3,153.3,1
+GB,Thurrock,GB0645A,Background,urban,O3,114.8,1
+GB,Nottingham,GB0646A,Background,urban,O3,104.5,1
+GB,Stoke-on-trent,GB0658A,Background,urban,O3,102.9,1
+GB,Derry,GB0673A,Background,urban,O3,107.0,1
+GB,Barnsley,GB0681A,Background,urban,O3,103.5,1
+GB,London,GB0682A,Traffic,urban,O3,76.7,0
+GB,Plymouth,GB0687A,Background,urban,O3,115.8,1
+GB,Southend-on-Sea,GB0728A,Background,urban,O3,128.7,1
+GB,Aberdeen,GB0729A,Background,urban,O3,99.0,0
+GB,Wirral,GB0730A,Background,urban,O3,109.3,1
+GB,Preston,GB0731A,Background,urban,O3,102.4,1
+GB,Portsmouth,GB0733A,Background,urban,O3,121.1,1
+GB,Coventry,GB0739A,Background,urban,O3,130.3,1
+GB,Bournemouth,GB0741A,Background,urban,O3,155.1,1
+GB,London,GB0743A,Background,urban,O3,113.3,1
+GB,Kingston-upon-Hull,GB0776A,Background,urban,O3,109.3,1
+GB,Edinburgh,GB0839A,Background,urban,O3,105.2,1
+GB,Reading,GB0840A,Background,urban,O3,131.8,1
+GB,Birmingham,GB0851A,Background,urban,O3,134.8,1
+GB,Brighton and Hove,GB0860A,Background,urban,O3,155.1,1
+GB,Sunderland,GB0863A,Background,urban,O3,109.1,1
+GB,Wigan,GB0864A,Background,urban,O3,125.9,1
+GB,Blackpool,GB0882A,Background,urban,O3,126.5,1
+GB,Bristol,GB0884A,Background,urban,O3,151.5,1
+GB,Birmingham,GB0960A,Traffic,urban,O3,96.6,0
+GB,Norwich,GB0995A,Background,suburban,O3,107.0,1
+GB,Birmingham,GB1013A,Background,urban,O3,134.2,1
+GB,Northampton,GB1019A,Background,urban,O3,147.7,1
+GB,Walsall,GB1020A,Background,urban,O3,144.8,1
+GB,Lisburn,GB1024A,Background,urban,O3,133.7,1
+GR,Athina,GR0002A,Traffic,urban,O3,130.0,1
+GR,Pátra,GR0008A,Traffic,urban,O3,136.4,1
+GR,Thessaloniki,GR0018A,Traffic,urban,O3,143.9,1
+GR,Athina,GR0032A,Traffic,urban,O3,110.0,1
+GR,Thessaloniki,GR0044A,Traffic,urban,O3,144.4,1
+HR,Zagreb,HR0009A,Traffic,urban,O3,160.6,1
+HU,Budapest,HU0022A,Background,suburban,O3,156.3,1
+HU,Debrecen,HU0023A,Background,urban,O3,139.4,1
+HU,Gyõr,HU0025A,Background,urban,O3,147.8,1
+HU,Pécs,HU0029A,Background,suburban,O3,176.9,1
+HU,Budapest,HU0036A,Background,suburban,O3,161.4,1
+HU,Budapest,HU0042A,Background,urban,O3,137.4,1
+IE,Dublin,IE0028A,Background,urban,O3,107.6,1
+IE,Dublin,IE0127A,Background,suburban,O3,114.7,1
+IT,Venezia,IT0448A,Background,urban,O3,176.0,1
+IT,Bergamo,IT0707A,Background,urban,O3,233.4,1
+IT,Varese,IT0732A,Background,suburban,O3,205.2,1
+IT,Parma,IT0804A,Background,urban,O3,186.0,1
+IT,Genova,IT0854A,Background,urban,O3,137.1,1
+IT,Genova,IT0856A,Background,urban,O3,171.7,1
+IT,Genova,IT0858A,Background,urban,O3,190.3,1
+IT,Latina,IT0869A,Background,urban,O3,127.5,1
+IT,Bologna,IT0892A,Background,urban,O3,208.6,1
+IT,Napoli,IT0897A,Traffic,urban,O3,162.4,1
+IT,Napoli,IT0898A,Traffic,urban,O3,112.5,1
+IT,Pavia,IT0912A,Background,urban,O3,179.0,1
+IT,Benevento,IT0934A,Traffic,urban,O3,178.9,1
+IT,Avellino,IT0935A,Traffic,urban,O3,127.1,1
+IT,Reggio nell'Emilia,IT0940A,Background,urban,O3,186.3,1
+IT,Roma,IT0953A,Background,urban,O3,142.5,1
+IT,Roma,IT0956A,Background,urban,O3,149.3,1
+IT,Roma,IT0957A,Background,suburban,O3,135.9,1
+IT,Venezia,IT0963A,Background,urban,O3,181.6,1
+IT,Trento,IT1037A,Background,urban,O3,175.4,1
+IT,Salerno,IT1041A,Traffic,urban,O3,132.6,1
+IT,Forlì,IT1048A,Background,urban,O3,168.4,1
+IT,Trieste,IT1091A,Background,suburban,O3,159.3,1
+IT,Pisa,IT1110A,Background,urban,O3,148.8,1
+IT,Udine,IT1170A,Background,suburban,O3,208.0,1
+IT,Roma,IT1176A,Background,urban,O3,151.8,1
+IT,Vicenza,IT1177A,Background,urban,O3,188.5,1
+IT,Perugia,IT1180A,Background,suburban,O3,126.8,1
+IT,Sassari,IT1243A,Traffic,suburban,O3,113.3,1
+IT,Biella,IT1247A,Background,urban,O3,171.8,1
+IT,Verona,IT1343A,Background,suburban,O3,183.1,1
+IT,Padova,IT1453A,Background,urban,O3,163.7,1
+IT,Caserta,IT1485A,Traffic,suburban,O3,111.7,1
+IT,Caserta,IT1486A,Traffic,urban,O3,174.5,1
+IT,Napoli,IT1491A,Traffic,urban,O3,159.9,1
+IT,Napoli,IT1492A,Traffic,urban,O3,128.3,1
+IT,Napoli,IT1495A,Traffic,suburban,O3,146.1,1
+IT,Napoli,IT1496A,Traffic,urban,O3,136.6,1
+IT,Napoli,IT1497A,Background,suburban,O3,145.8,1
+IT,Salerno,IT1504A,Traffic,urban,O3,132.2,1
+IT,Novara,IT1518A,Background,urban,O3,156.0,1
+IT,Asti,IT1523A,Background,urban,O3,189.5,1
+IT,La Spezia,IT1536A,Background,urban,O3,124.5,1
+IT,Treviso,IT1590A,Background,urban,O3,201.5,1
+IT,Taranto,IT1614A,Background,urban,O3,160.8,1
+IT,Bari,IT1624A,Background,suburban,O3,127.7,1
+IT,La Spezia,IT1662A,Background,suburban,O3,136.9,1
+IT,Milano,IT1692A,Background,urban,O3,163.7,1
+IT,Brescia,IT1737A,Background,urban,O3,198.4,1
+IT,Cremona,IT1739A,Background,urban,O3,179.2,1
+IT,Monza,IT1743A,Background,urban,O3,189.4,1
+IT,Modena,IT1771A,Background,urban,O3,175.4,1
+IT,Campobasso,IT1798A,Background,urban,O3,101.0,1
+IT,Campobasso,IT1799A,Background,urban,O3,100.0,0
+IT,Lecco,IT1826A,Background,urban,O3,205.5,1
+IT,Roma,IT1835A,Background,urban,O3,150.5,1
+IT,Roma,IT1836A,Background,urban,O3,128.5,1
+IT,Savona,IT1883A,Background,urban,O3,141.5,1
+IT,Roma,IT1906A,Traffic,urban,O3,124.1,1
+IT,Ferrara,IT1918A,Background,urban,O3,169.5,1
+IT,Piacenza,IT1975A,Background,urban,O3,206.8,1
+IT,Barletta,IT2003A,Traffic,urban,O3,129.0,1
+IT,Sassari,IT2009A,Background,suburban,O3,111.3,1
+IT,Roma,IT2012A,Background,suburban,O3,140.3,1
+IT,Sanremo,IT2029A,Background,urban,O3,142.0,1
+IT,Cagliari,IT2056A,Traffic,urban,O3,118.2,1
+IT,Bologna,IT2075A,Background,suburban,O3,183.6,1
+IT,Bolzano,IT2096A,background,urban,O3,154.5,1
+IT,Monza,IT2098A,background,suburban,O3,207.5,1
+LT,Vilnius,LT00002,Background,urban,O3,122.8,1
+LT,Vilnius,LT00003,Traffic,urban,O3,109.1,1
+LT,Panevežys,LT00012,Background,urban,O3,121.7,1
+LT,Šiauliai,LT00022,Traffic,urban,O3,102.3,1
+LT,Klaipeda,LT00033,Traffic,urban,O3,88.3,0
+LT,Kaunas,LT00041,Traffic,urban,O3,109.7,1
+LU,Luxembourg,LU0101A,Background,urban,O3,156.1,1
+LV,Liepaja,LV000L1,Traffic,urban,O3,102.8,1
+LV,Riga,LV00RP5,Background,urban,O3,113.4,1
+LV,Riga,LV0RKE2,Background,urban,O3,118.2,1
+MT,Valletta,MT00005,Traffic,urban,O3,120.5,1
+NL,Amsterdam,NL00003,Background,urban,O3,145.9,1
+NL,Amsterdam,NL00012,Traffic,urban,O3,139.9,1
+NL,Amsterdam,NL00014,Background,urban,O3,152.3,1
+NL,Heerlen,NL00137,Background,urban,O3,183.8,1
+NL,Eindhoven,NL00236,Traffic,urban,O3,136.8,1
+NL,Breda,NL00241,Background,suburban,O3,188.5,1
+NL,'s-Gravenhage,NL00404,Background,urban,O3,129.8,1
+NL,Rotterdam,NL00418,Background,urban,O3,178.5,1
+NL,Vlaardingen,NL00433,Traffic,urban,O3,130.2,1
+NL,Dordrecht,NL00442,Background,urban,O3,182.1,1
+NL,'s-Gravenhage,NL00446,Background,suburban,O3,150.3,1
+NL,Schiedam,NL00494,Background,urban,O3,164.7,1
+NL,Haarlem,NL00537,Traffic,urban,O3,105.3,1
+NL,Utrecht,NL00639,Traffic,urban,O3,172.2,1
+NL,Utrecht,NL00643,Background,urban,O3,181.3,1
+NL,Zaanstad,NL00701,Background,urban,O3,156.1,1
+NL,Nijmegen,NL00742,Background,urban,O3,174.9,1
+NL,Groningen,NL00938,Background,suburban,O3,148.5,1
+NO,Bergen,NO0015A,Background,urban,O3,104.8,1
+NO,Oslo,NO0088A,Background,urban,O3,97.2,0
+PL,Katowice,PL0008A,Background,urban,O3,172.9,1
+PL,Konin,PL0031A,Background,suburban,O3,139.6,1
+PL,Warszawa,PL0044A,Background,urban,O3,142.0,1
+PL,Gdynia,PL0048A,Background,urban,O3,123.6,1
+PL,Gdansk,PL0049A,Background,urban,O3,133.7,1
+PL,Gdansk,PL0052A,Background,urban,O3,133.8,1
+PL,Bydgoszcz,PL0064A,Background,urban,O3,154.7,1
+PL,Torun,PL0071A,Background,urban,O3,143.8,1
+PL,Lódz,PL0096A,Background,urban,O3,153.8,1
+PL,Radom,PL0138A,Background,urban,O3,133.2,1
+PL,Warszawa,PL0141A,Background,urban,O3,147.2,1
+PL,Warszawa,PL0143A,Background,urban,O3,150.9,1
+PL,Bialystok,PL0149A,Background,suburban,O3,146.4,1
+PL,Olsztyn,PL0175A,Background,urban,O3,133.5,1
+PL,Czestochowa,PL0184A,Background,urban,O3,166.4,1
+PL,Jelenia Góra,PL0189A,Background,urban,O3,144.1,1
+PL,Legnica,PL0190A,Background,urban,O3,153.0,1
+PL,Walbrzych,PL0192A,Background,urban,O3,146.8,1
+PL,Wroclaw,PL0194A,Background,urban,O3,131.4,1
+PL,Gorzów Wielkopolski,PL0209A,Background,urban,O3,162.9,1
+PL,Bielsko-Biala,PL0234A,Background,urban,O3,163.3,1
+PL,Rybnik,PL0239A,Background,urban,O3,163.0,1
+PL,Zabrze,PL0242A,Background,urban,O3,162.9,1
+PL,Poznan,PL0245A,Background,urban,O3,134.7,1
+PL,Szczecin,PL0248A,Background,urban,O3,127.5,1
+PL,Kielce,PL0283A,Background,urban,O3,149.9,1
+PL,Elblag,PL0295A,Background,urban,O3,136.1,1
+PL,Kraków,PL0501A,Background,urban,O3,144.0,1
+PL,Tarnów,PL0502A,Background,urban,O3,134.8,1
+PL,Lublin,PL0507A,Background,urban,O3,139.4,1
+PL,Piotrków Trybunalski,PL0509A,Background,urban,O3,158.0,1
+PL,Gdynia,PL0520A,Background,urban,O3,124.7,1
+PL,Siedlce,PL0538A,Background,urban,O3,135.8,1
+PT,Matosinhos,PT01021,Background,suburban,O3,165.5,1
+PT,Valongo,PT01023,Background,suburban,O3,168.8,1
+PT,Paredes,PT01025,Background,suburban,O3,133.1,1
+PT,Matosinhos,PT01034,Background,suburban,O3,135.5,1
+PT,Braga,PT01042,Background,suburban,O3,183.6,1
+PT,Porto,PT01050,Background,urban,O3,140.8,1
+PT,Vila Nova de Gaia,PT01053,Background,urban,O3,132.6,1
+PT,Seixal,PT03063,Background,suburban,O3,163.4,1
+PT,Lisboa,PT03071,Background,urban,O3,158.5,1
+PT,Amadora,PT03082,Background,urban,O3,137.3,1
+PT,Almada,PT03083,Background,urban,O3,173.2,1
+PT,Lisboa,PT03087,Background,urban,O3,169.3,1
+PT,Setúbal,PT03093,Background,urban,O3,162.8,1
+PT,Vila Franca de Xira,PT03101,Background,urban,O3,167.5,1
+PT,Faro,PT05007,Background,urban,O3,148.9,1
+RO,Craiova,RO0080A,Traffic,urban,O3,162.6,1
+RO,Iasi,RO0087A,Background,suburban,O3,90.2,0
+RO,Alba Iulia,RO0092A,Background,urban,O3,89.7,0
+RO,Arad,RO0095A,Traffic,urban,O3,95.1,0
+RO,Arad,RO0096A,Background,urban,O3,112.0,1
+RO,Pitesti,RO0099A,Background,urban,O3,77.9,0
+RO,Bacau,RO0104A,Background,urban,O3,132.5,1
+RO,Oradea,RO0107A,Background,urban,O3,100.1,0
+RO,Botosani,RO0112A,Background,urban,O3,118.1,1
+RO,Brasov,RO0119A,Background,urban,O3,61.4,0
+RO,Buzau,RO0123A,Background,urban,O3,63.5,0
+RO,Constanta,RO0132A,Background,urban,O3,90.8,0
+RO,Baia Mare,RO0162A,Background,urban,O3,94.5,0
+RO,Baia Mare,RO0163A,Background,suburban,O3,95.4,0
+RO,Târgu Mures,RO0167A,Background,urban,O3,88.9,0
+RO,Piatra Neamt,RO0171A,Background,urban,O3,110.3,1
+RO,Suceava,RO0188A,Background,urban,O3,100.8,1
+RO,Timisoara,RO0194A,Background,urban,O3,107.4,1
+SE,Malmö,SE0001A,Background,urban,O3,118.8,1
+SE,Göteborg,SE0004A,Background,urban,O3,103.2,1
+SE,Stockholm,SE0022A,Background,urban,O3,106.5,1
+SE,Borås,SE0026A,Traffic,urban,O3,122.1,1
+SE,Helsingborg,SE0053A,Background,urban,O3,103.6,1
+SE,Lund,SE0054A,Background,urban,O3,109.2,1
+SE,Malmö,SE0058A,Traffic,urban,O3,108.2,1
+SE,Malmö,SE0096A,Traffic,urban,O3,107.7,1
+SI,Ljubljana,SI0003A,Background,urban,O3,164.7,1
+SK,Bratislava,SK0001A,Background,urban,O3,144.1,1
+SK,Košice,SK0016A,Background,suburban,O3,144.1,1
+SK,Bratislava,SK0048A,Background,suburban,O3,166.1,1
+SK,Banská Bystrica,SK0263A,Background,urban,O3,158.2,1
