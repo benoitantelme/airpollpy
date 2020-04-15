@@ -81,5 +81,5 @@ def test_create_pollutants_df():
     path = path1 + pollutant.name + path2
     df = create_pollutants_df(pollutant, path)
     assert df is not None
-    assert len(df.columns) == 4
+    assert len(df.columns) == 5
 

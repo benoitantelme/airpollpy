@@ -1,5 +1,5 @@
 from data.constants import POLLUTANT
-from pandas import DataFrame, concat
+from pandas import DataFrame, concat, merge
 from src import csv_dataset
 
 STATISTIC_VALUE = "statistic_value (µg/m3)"
@@ -17,7 +17,7 @@ def get_stations_filtered(df: DataFrame, func) -> DataFrame:
     :return: the data set limited to the stations that has been filtered for each city
     """
 
-    return df.loc[df.groupby(["city_name"])[STATISTIC_VALUE].apply(func)]
+    return df.loc[df.groupby(["city_name"], as_index=False)[STATISTIC_VALUE].apply(func)]
 
 
 def get_worst_stations(path: str, pollutant: POLLUTANT) -> DataFrame:
@@ -34,7 +34,7 @@ def get_best_stations(path: str, pollutant: POLLUTANT) -> DataFrame:
 
 def get_mean_per_city(path: str, pollutant: POLLUTANT) -> DataFrame:
     df = get_stations_data(path)
-    df = df.groupby(["country iso code", "city_name"])[STATISTIC_VALUE].mean().reset_index()
+    df = df.groupby(["country iso code", "city_name"], as_index=False)[STATISTIC_VALUE].mean()
     df.rename({STATISTIC_VALUE: 'mean ' + pollutant.name + ' (µg/m3)'}, axis=1, inplace=True)
     return df
 
@@ -51,15 +51,16 @@ def set_index(df):
 def create_pollutants_df(pollutant: POLLUTANT, path: str) -> DataFrame:
     worst_df = get_worst_stations(path, pollutant)
     clean_df(worst_df)
-    set_index(worst_df)
+    # set_index(worst_df)
 
     best_df = get_best_stations(path, pollutant)
     clean_df(best_df)
-    set_index(best_df)
+    # set_index(best_df)
 
     mean_df = get_mean_per_city(path, pollutant)
-    set_index(mean_df)
+    # set_index(mean_df)
 
-    return concat([worst_df, mean_df, best_df], axis=1)
-
+    # return concat([worst_df, mean_df, best_df], axis=1)
+    res = merge(worst_df, mean_df)
+    return merge(res, best_df)
 
