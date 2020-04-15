@@ -1,25 +1,15 @@
-from src.stations import get_worst_stations, get_mean_per_city, get_best_stations, STATISTIC_VALUE, clean_df, set_index
+from src.stations import get_worst_stations, get_mean_per_city, get_best_stations, clean_df, set_index, \
+    create_pollutants_df
+from data.constants import POLLUTANT
 import pandas as pd
 
 
 path1 = "../../data/main/cleaned/others/2013_"
 path2 = "_monitoring_stations.csv"
+pollutant = POLLUTANT.pm10
+path = path1 + pollutant.name + path2
 
-pollutant = 'pm10'
-path = path1 + pollutant + path2
-
-worst_df = get_worst_stations(path, pollutant)
-clean_df(worst_df)
-set_index(worst_df)
-
-best_df = get_best_stations(path, pollutant)
-clean_df(best_df)
-set_index(best_df)
-
-mean_df = get_mean_per_city(path, pollutant)
-set_index(mean_df)
-
-pollutant_df = pd.concat([worst_df, mean_df, best_df], axis=1)
+pollutant_df = create_pollutants_df(pollutant, path)
 print(pollutant_df.head())
 
-# df1 = df[['a','d']]
+
