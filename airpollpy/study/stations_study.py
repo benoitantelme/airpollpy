@@ -1,7 +1,8 @@
-from src.stations import create_pollutants_df, filter_main_cities, get_best_station
+from src.stations import create_pollutants_df, filter_main_cities, get_best_station, STATISTIC_VALUE
 from data.constants import POLLUTANT
 import seaborn as sns
 import matplotlib.pyplot as plt
+import plotly.graph_objects as go
 
 path1 = "../../data/main/cleaned/others/2013_"
 path2 = "_monitoring_stations.csv"
@@ -26,9 +27,19 @@ def plot_all():
         plot_european_cities_pollutant(pol)
 
 
-path = path1 + POLLUTANT.no2.name + path2
-df = get_best_station(path)
-print()
+def plot_best_stations_tables(pollutant: POLLUTANT, save=False):
+    path = path1 + POLLUTANT.no2.name + path2
+    df = get_best_station(path)
+
+    fig = go.Figure(data=[go.Table(
+        header=dict(values=list(df.columns), fill_color='grey', align='center'),
+        cells=dict(values=[df['country iso code'], df['city_name'], df['station_european_code'], df[STATISTIC_VALUE],
+                           df['mean'], df['diff'], df['diff %']],
+                   fill_color='lightgrey', align='center'))])
+    fig.update_layout(title='Best stations for ' + pollutant.name + ' emissions in 2013')
+    fig.show()
+    if save:
+        fig.write_image('stations_plot_' + pollutant.name + '.png')
 
 
-
+plot_best_stations_tables(POLLUTANT.no2, False)
