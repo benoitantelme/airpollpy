@@ -22,13 +22,13 @@ def plot_european_cities_pollutant(pollutant: POLLUTANT, save=False):
     plt.show()
 
 
-def plot_all():
+def plot_all_cities_pollutant():
     for pol in POLLUTANT:
         plot_european_cities_pollutant(pol)
 
 
 def plot_best_stations_tables(pollutant: POLLUTANT, save=False):
-    path = path1 + POLLUTANT.no2.name + path2
+    path = path1 + pollutant.name + path2
     df = get_best_station(path)
 
     fig = go.Figure(data=[go.Table(
@@ -42,4 +42,9 @@ def plot_best_stations_tables(pollutant: POLLUTANT, save=False):
         fig.write_image('stations_plot_' + pollutant.name + '.png')
 
 
-plot_best_stations_tables(POLLUTANT.no2, False)
+def plot_all_best_stations():
+    for pol in POLLUTANT:
+        plot_best_stations_tables(pol, False)
+
+
+plot_all_best_stations()

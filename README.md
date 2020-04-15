@@ -16,14 +16,23 @@ Still have to find a proper way to retrieve all the data and decide how to store
 
 ## Stations
 Using stations data from 2013 to check the min, mean and max for a city in order to study and visualize those numbers before using the main data sets.
+![European cities NO2 emissions in 2013](data/plot/stations/stations_plot_no2.png)
 
-![European cities NO2 emissions in 2013](data/plot/stations_plot_no2.png)
+![European cities PM10 emissions in 2013](data/plot/stations/stations_plot_pm10.png)
 
-![European cities PM10 emissions in 2013](data/plot/stations_plot_pm10.png)
+![European cities PM2.5 emissions in 2013](data/plot/stations/stations_plot_pm25.png)
 
-![European cities PM2.5 emissions in 2013](data/plot/stations_plot_pm25.png)
+![European cities O3 emissions in 2013](data/plot/stations/stations_plot_o3.png)
 
-![European cities O3 emissions in 2013](data/plot/stations_plot_o3.png)
+
+Best, as in closest to the mean or unique station in the city per pollutant:
+![Best stations NO2 for each city in 2013](data/plot/stations/best_stations_2013_no2.png)
+
+![Best stations PM10 for each city in 2013](data/plot/stations/best_stations_2013_pm10.png)
+
+![Best stations PM25 for each city in 2013](data/plot/stations/best_stations_2013_pm25.png)
+
+![Best stations O3 for each city in 2013](data/plot/stations/best_stations_2013_o3.png)
 
 
 ## Dependencies
