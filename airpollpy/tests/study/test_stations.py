@@ -1,5 +1,5 @@
 from data.constants import POLLUTANT
-from src.stations import get_stations_data, clean_df, create_pollutants_df
+from src.stations import get_stations_data, clean_df, create_pollutants_df, filter_main_cities, get_best_station
 from src.stations import get_worst_stations
 from src.stations import get_best_stations
 from src.stations import get_mean_per_city
@@ -79,7 +79,21 @@ def test_clean_df():
 def test_create_pollutants_df():
     pollutant = POLLUTANT.pm10
     path = path1 + pollutant.name + path2
-    df = create_pollutants_df(pollutant, path)
+    df = create_pollutants_df(path, pollutant)
     assert df is not None
     assert len(df.columns) == 5
+
+
+def test_filter_main_cities():
+    path = path1 + POLLUTANT.pm10.name + path2
+    df = filter_main_cities(get_stations_data(path))
+    assert df is not None
+    assert len(df) == 121
+
+
+def test_get_best_station():
+    path = path1 + POLLUTANT.pm10.name + path2
+    df = get_best_station(path)
+    assert df is not None
+    assert len(df) == 22
 
