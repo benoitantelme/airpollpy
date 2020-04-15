@@ -20,9 +20,9 @@ def plot_european_cities_pollutant(pollutant: POLLUTANT, save=False):
                                         'Helsinki', 'Budapest', 'Riga', 'Vilnius', 'Warszawa'])]
 
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
-    fig = main_cities_df.plot.bar(x='city_name', figsize=(12, 6)).get_figure()
+    p = main_cities_df.plot.bar(x='city_name', figsize=(12, 6), title='European cities ' + pollutant.name + ' emissions in 2013')
     if save:
-        fig.savefig('stations_plot_' + pollutant.name + '.png')
+        p.get_figure().savefig('stations_plot_' + pollutant.name + '.png')
     plt.show()
 
 
