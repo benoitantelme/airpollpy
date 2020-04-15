@@ -15,9 +15,9 @@ main_cities_df = pollutant_df[
     pollutant_df['city_name'].isin(['Paris', 'London', 'Berlin', 'Madrid', 'Roma', 'Dublin', 'København',
                                     'Thessaloniki', 'Bruxelles', 'Lisboa', 'Luxembourg', 'Oslo', 'Stockholm',
                                     'Wien', 'Sofia', 'Zagreb', 'Praha', 'Tallinn', 'Amsterdam',
-                                    'Helsinki / Helsingfors', 'Budapest', 'Riga', 'Vilnius', 'Warszawa'])]
+                                    'Helsinki', 'Budapest', 'Riga', 'Vilnius', 'Warszawa'])]
 
 sns.set_style("whitegrid", {'grid.linestyle': '-'})
-fig = main_cities_df.plot.bar(x='city_name', figsize=(14, 8)).get_figure()
+fig = main_cities_df.plot.bar(x='city_name', figsize=(12, 8)).get_figure()
 # fig.savefig('stations_plot.png')
 plt.show()

@@ -54,5 +54,7 @@ def create_pollutants_df(pollutant: POLLUTANT, path: str) -> DataFrame:
     mean_df = get_mean_per_city(path, pollutant)
 
     res = merge(worst_df, mean_df)
-    return merge(res, best_df)
+    res = merge(res, best_df)
+    res['city_name'] = res['city_name'].str.replace('Helsinki / Helsingfors', 'Helsinki')
+    return res
 
