@@ -44,7 +44,7 @@ def clean_df(df):
              'country iso code'], axis=1, inplace=True)
 
 
-def create_pollutants_df(pollutant: POLLUTANT, path: str) -> DataFrame:
+def create_pollutants_df(path: str, pollutant: POLLUTANT) -> DataFrame:
     worst_df = get_worst_stations(path, pollutant)
     clean_df(worst_df)
 
@@ -57,4 +57,22 @@ def create_pollutants_df(pollutant: POLLUTANT, path: str) -> DataFrame:
     res = merge(res, best_df)
     res['city_name'] = res['city_name'].str.replace('Helsinki / Helsingfors', 'Helsinki')
     return res
+
+
+def filter_main_cities(df: DataFrame) -> DataFrame:
+    return df[df['city_name'].isin(['Paris', 'London', 'Berlin', 'Madrid', 'Roma', 'Dublin', 'København',
+                                    'Thessaloniki', 'Bruxelles', 'Lisboa', 'Luxembourg', 'Oslo', 'Stockholm',
+                                    'Wien', 'Sofia', 'Zagreb', 'Praha', 'Tallinn', 'Amsterdam',
+                                    'Helsinki', 'Budapest', 'Riga', 'Vilnius', 'Warszawa'])]
+
+
+def get_best_station(path: str):
+    df = get_stations_data(path)
+    df = filter_main_cities(df)
+    df.drop(['type_of_station', 'station_type_of_area', 'component_caption', 'above_AQG?'], axis=1, inplace=True)
+
+    df['mean'] = df.groupby('city_name')[STATISTIC_VALUE].transform('mean')
+    df['diff'] = abs(df['mean'] - df[STATISTIC_VALUE])
+    df['diff %'] = df['diff'] * 100 / df['mean']
+    return df.loc[df.groupby("city_name")["diff"].idxmin()]
 
