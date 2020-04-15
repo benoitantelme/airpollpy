@@ -44,23 +44,15 @@ def clean_df(df):
              'country iso code'], axis=1, inplace=True)
 
 
-def set_index(df):
-    df.set_index('city_name', inplace=True)
-
-
 def create_pollutants_df(pollutant: POLLUTANT, path: str) -> DataFrame:
     worst_df = get_worst_stations(path, pollutant)
     clean_df(worst_df)
-    # set_index(worst_df)
 
     best_df = get_best_stations(path, pollutant)
     clean_df(best_df)
-    # set_index(best_df)
 
     mean_df = get_mean_per_city(path, pollutant)
-    # set_index(mean_df)
 
-    # return concat([worst_df, mean_df, best_df], axis=1)
     res = merge(worst_df, mean_df)
     return merge(res, best_df)
 
