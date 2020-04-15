@@ -1,4 +1,4 @@
-from src.stations import get_stations_data
+from src.stations import get_stations_data, clean_df
 from src.stations import get_worst_stations
 from src.stations import get_best_stations
 from src.stations import get_mean_per_city
@@ -63,5 +63,16 @@ def test_get_mean_per_city():
     assert len(df) < size
     # number of best station/city for 'no2'
     assert len(df) == 525
-    assert len(df.columns) == 1
+    assert len(df.columns) == 3
+
+
+def test_clean_df():
+    path = path1 + 'pm10' + path2
+    df = get_stations_data(path)
+    assert df is not None
+    assert len(df.columns) == 8
+    clean_df(df)
+    assert len(df.columns) == 2
+
+
 

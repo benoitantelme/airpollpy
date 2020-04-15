@@ -37,3 +37,12 @@ def get_mean_per_city(path: str, pollutant: str) -> DataFrame:
     df.rename({STATISTIC_VALUE: 'mean ' + pollutant + ' (µg/m3)'}, axis=1, inplace=True)
     return df
 
+
+def clean_df(df):
+    df.drop(['station_european_code', 'type_of_station', 'station_type_of_area', 'component_caption', 'above_AQG?',
+             'country iso code'], axis=1, inplace=True)
+
+
+def set_index(df):
+    df.set_index('city_name', inplace=True)
+

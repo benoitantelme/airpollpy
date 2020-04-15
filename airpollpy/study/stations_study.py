@@ -1,14 +1,5 @@
-from src.stations import get_worst_stations, get_mean_per_city, get_best_stations, STATISTIC_VALUE
+from src.stations import get_worst_stations, get_mean_per_city, get_best_stations, STATISTIC_VALUE, clean_df, set_index
 import pandas as pd
-
-
-def clean_df(df):
-    df.drop(['station_european_code', 'type_of_station', 'station_type_of_area', 'component_caption', 'above_AQG?',
-             'country iso code'], axis=1, inplace=True)
-
-
-def set_index(df):
-    df.set_index('city_name', inplace=True)
 
 
 path1 = "../../data/main/cleaned/others/2013_"
