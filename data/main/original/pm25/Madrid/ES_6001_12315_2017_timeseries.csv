@@ -1,2 +1,0 @@
-Countrycode,Namespace,AirQualityNetwork,AirQualityStation,AirQualityStationEoICode,SamplingPoint,SamplingProcess,Sample,AirPollutant,AirPollutantCode,AveragingTime,Concentration,UnitOfMeasurement,DatetimeBegin,DatetimeEnd,Validity,Verification
-ES,ES.BDCA.AQD,NET_ES131A,STA_ES1193A,,SP_28079024_9_47,SPP_28079024_9_47.1,SAM_28079024_9_47,PM2.5,http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001,hour,30.0000000000,µg/m3,2017-01-01 00:00:00 +01:00,2017-01-01 01:00:00 +01:00,1,1

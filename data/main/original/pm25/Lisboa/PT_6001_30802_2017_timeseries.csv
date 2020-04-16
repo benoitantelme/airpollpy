@@ -1,2 +1,0 @@
-Countrycode,Namespace,AirQualityNetwork,AirQualityStation,AirQualityStationEoICode,SamplingPoint,SamplingProcess,Sample,AirPollutant,AirPollutantCode,AveragingTime,Concentration,UnitOfMeasurement,DatetimeBegin,DatetimeEnd,Validity,Verification
-PT,PT.APA.AQ,NET-PT00002,STA-PT03072,,SPO-PT03072_06001_100,SPP-BETA_enviroMP2.5M_601,SPO_F-PT03072_06001_100_100,PM2.5,http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001,hour,42.3999999900,µg/m3,2017-01-01 00:00:00 +01:00,2017-01-01 01:00:00 +01:00,1,1

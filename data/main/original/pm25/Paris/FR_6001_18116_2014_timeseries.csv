@@ -1,2 +1,0 @@
-Countrycode,Namespace,AirQualityNetwork,AirQualityStation,AirQualityStationEoICode,SamplingPoint,SamplingProcess,Sample,AirPollutant,AirPollutantCode,AveragingTime,Concentration,UnitOfMeasurement,DatetimeBegin,DatetimeEnd,Validity,Verification
-FR,FR.LCSQA-INERIS.AQ,NET-FR004A,STA-FR04156,,SPO-FR04156_06001_100,SPP-FR_A_D9119D9119,SPO_F-FR04156_06001_100_100,PM2.5,http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001,hour,9.1500000000,µg/m3,2014-01-01 00:00:00 +01:00,2014-01-01 01:00:00 +01:00,1,1

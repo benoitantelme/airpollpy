@@ -1,2 +1,0 @@
-Countrycode,Namespace,AirQualityNetwork,AirQualityStation,AirQualityStationEoICode,SamplingPoint,SamplingProcess,Sample,AirPollutant,AirPollutantCode,AveragingTime,Concentration,UnitOfMeasurement,DatetimeBegin,DatetimeEnd,Validity,Verification
-AT,AT.0008.20.AQ,NET.09,STA.09.TAB,,SPO.09.TAB.56213.6001.1,SPP.09.TAB.56213.6001.1.6366,SAM.09.TAB.56213.6001.1,PM2.5,http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001,hour,107.9599990800,µg/m3,2015-01-01 00:00:00 +01:00,2015-01-01 01:00:00 +01:00,1,1
