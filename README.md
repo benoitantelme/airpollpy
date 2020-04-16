@@ -7,7 +7,7 @@ Then start cleaning the data sets and using them for visualization.
 And potentially something more elaborate later that would require more data to start thinking about correlation and models.
 
 
-## Data info
+## Getting the data
 I started retrieving the data for London using the [Bloomsbury monitoring station](https://uk-air.defra.gov.uk/networks/site-info?site_id=CLL2)
 which code corresponds to GB0566A in the csv files.
 Potential amelioration would be to take the data from all stations for this city and use a mean.
@@ -35,7 +35,7 @@ Best, as in closest to the mean or unique station in the city per pollutant:
 ![Best stations O3 for each city in 2013](data/plot/stations/best_stations_2013_o3.png)
 
 
-Stations used for each pollutant:
+Best station for each pollutant an city:
 
 | City  | NO2  | O3  | PM10  | PM2.5  |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -61,6 +61,10 @@ Stations used for each pollutant:
 | Warszawa  | PL0592A  | PL0141A  | PL0141A  | PL0141A  |
 | Wien  | AT9STAD  | AT90LAA  | AT90TAB  | AT90AKC  |
 | Zagreb  | HR0007A  | HR0009A  | HR0009A  | N/A  |
+
+
+Issue with this method: some stations from 2013 don't provide data later, some different station could be closer to the mean in later years.
+Going to use the whole data set available and work on it to build a mean for each city and timestamp.
 
 
 ## Dependencies
