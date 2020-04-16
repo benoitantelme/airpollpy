@@ -1,0 +1,2 @@
+Countrycode,Namespace,AirQualityNetwork,AirQualityStation,AirQualityStationEoICode,SamplingPoint,SamplingProcess,Sample,AirPollutant,AirPollutantCode,AveragingTime,Concentration,UnitOfMeasurement,DatetimeBegin,DatetimeEnd,Validity,Verification
+PT,PT.APA.AQ,NET-PT00002,STA-PT03082,,SPO-PT03082_00007_100,SPP-PT_A_UV-P_dasibi1008,SPO_F-PT03082_00007_100_100,O3,http://dd.eionet.europa.eu/vocabulary/aq/pollutant/7,hour,18.5000000000,µg/m3,2014-01-01 00:00:00 +01:00,2014-01-01 01:00:00 +01:00,1,1
