@@ -14,7 +14,7 @@ def test_get_dataframe_encoding():
 
 
 def test_clean_pm10_timeseries():
-    path = "../../data/main/original/PM10/London/GB_5_22642_2020_timeseries.csv"
+    path = "../../data/main/original/pm10/London/GB_5_22642_2020_timeseries.csv"
     df = csv_dataset.get_dataframe(path)
     assert len(df.columns) == 17
 
