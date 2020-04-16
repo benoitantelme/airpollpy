@@ -30,6 +30,7 @@ def plot_all_cities_pollutant():
 def plot_best_stations_tables(pollutant: POLLUTANT, save=False):
     path = path1 + pollutant.name + path2
     df = get_best_station(path)
+    df = df.round(2)
 
     fig = go.Figure(data=[go.Table(
         header=dict(values=list(df.columns), fill_color='grey', align='center'),
