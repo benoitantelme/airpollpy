@@ -1,2 +1,2 @@
-,Countrycode,AirQualityStation,AirPollutant,Concentration,UnitOfMeasurement,DatetimeBegin
-0,FR,STA-FR04319,O3,46.3333,µg/m3,2014-01-01 00:00:00 +01:00
+Countrycode,AirQualityStation,AirPollutant,Concentration,UnitOfMeasurement,DatetimeBegin
+FR,STA-FR04319,O3,46.3333,µg/m3,2014-01-01 00:00:00 +01:00

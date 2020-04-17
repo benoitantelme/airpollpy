@@ -2,20 +2,22 @@
 Project around air pollution in Python
 
 ## What is it?
-The initial goal of the project is to retrieve data (method to be decided) from the European Environment Agency.
-Then start cleaning the data sets and using them for visualization. 
-And potentially something more elaborate later that would require more data to start thinking about correlation and models.
+The goal of the project is to retrieve and analyze data from the European Environment Agency.
+Initially inspired by this [article](https://www.eea.europa.eu/themes/air/air-quality-and-covid19/air-quality-and-covid19).
 
 
 ## Getting the data
 I started retrieving the data for London using the [Bloomsbury monitoring station](https://uk-air.defra.gov.uk/networks/site-info?site_id=CLL2)
 which code corresponds to GB0566A in the csv files.
-Potential amelioration would be to take the data from all stations for this city and use a mean.
-Still have to find a proper way to retrieve all the data and decide how to store them (original and/or cleaned set?).
+A potential amelioration would be to take the data from all stations for this city and use a mean. However that is **a lot** of data.
 
 
 ## Stations
-Using stations data from 2013 to check the min, mean and max for a city in order to study and visualize those numbers before using the main data sets.
+Comparison of all station data available from a 2013 data set to check the min, mean and max for a city in order to study 
+and visualize those numbers before using the main data sets. Potentially it could be doable to select a **best** station 
+for a city and pollutant instead of using the full data set.
+
+Vizualisation of the worst, the best and a mean of all measures per cities and pollutant:
 ![European cities NO2 emissions in 2013](data/plot/stations/stations_plot_no2.png)
 
 ![European cities PM10 emissions in 2013](data/plot/stations/stations_plot_pm10.png)
@@ -25,7 +27,7 @@ Using stations data from 2013 to check the min, mean and max for a city in order
 ![European cities O3 emissions in 2013](data/plot/stations/stations_plot_o3.png)
 
 
-Best, as in closest to the mean or unique station in the city per pollutant:
+Best, as in closest to the mean or unique station in a city per pollutant:
 ![Best stations NO2 for each city in 2013](data/plot/stations/best_stations_2013_no2.png)
 
 ![Best stations PM10 for each city in 2013](data/plot/stations/best_stations_2013_pm10.png)
@@ -63,8 +65,12 @@ Best station for each pollutant an city:
 | Zagreb  | HR0007A  | HR0009A  | HR0009A  | N/A  |
 
 
-Issue with this method: some stations from 2013 don't provide data later, some different station could be closer to the mean in later years.
-Going to use the whole data set available and work on it to build a mean for each city and timestamp.
+## Creating a mean data set per city and pollutant
+An issue with the **best station** method: some stations from 2013 don't provide data later. 
+Also, a different station could be closer to the mean in later years.
+I decided to use the whole data set available and work on it to build a mean for each city and timestamp.
+The data in *data/main/cleaned* is available per pollutant, city and then a file per station and year.
+The goal is going to be to merge every stations value and average it to a mean for the whhole city concerned.
 
 
 ## Dependencies

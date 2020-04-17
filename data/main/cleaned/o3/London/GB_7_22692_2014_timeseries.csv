@@ -1,2 +1,2 @@
-,Countrycode,AirQualityStation,AirPollutant,Concentration,UnitOfMeasurement,DatetimeBegin
-0,GB,Station_GB0743A,O3,50.49121,µg/m3,2014-01-01 00:00:00 +01:00
+Countrycode,AirQualityStation,AirPollutant,Concentration,UnitOfMeasurement,DatetimeBegin
+GB,Station_GB0743A,O3,50.49121,µg/m3,2014-01-01 00:00:00 +01:00
