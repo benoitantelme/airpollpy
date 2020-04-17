@@ -1,2 +1,2 @@
-,Countrycode,AirQualityStation,AirPollutant,Concentration,UnitOfMeasurement,DatetimeBegin
-0,PT,STA-PT03075,PM10,62.29999999,µg/m3,2019-01-01 00:00:00 +01:00
+Countrycode,AirQualityStation,AirPollutant,Concentration,UnitOfMeasurement,DatetimeBegin
+PT,STA-PT03075,PM10,62.29999999,µg/m3,2019-01-01 00:00:00 +01:00

@@ -1,2 +1,2 @@
-,Countrycode,AirQualityStation,AirPollutant,Concentration,UnitOfMeasurement,DatetimeBegin
-0,PT,STA-PT03072,O3,1.1,µg/m3,2015-01-01 00:00:00 +01:00
+Countrycode,AirQualityStation,AirPollutant,Concentration,UnitOfMeasurement,DatetimeBegin
+PT,STA-PT03072,O3,1.1,µg/m3,2015-01-01 00:00:00 +01:00

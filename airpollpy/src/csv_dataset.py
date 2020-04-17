@@ -13,7 +13,8 @@ def get_dataframe(path: str, encoding=None) -> DataFrame:
 def clean_pm10_timeseries(path: str) -> DataFrame:
     df = pd.read_csv(path)
 
-    df.drop(['Namespace', 'AirQualityNetwork', 'AirQualityStationEoICode', 'SamplingPoint', 'SamplingProcess', 'AirPollutantCode',
+    df.drop(['Namespace', 'AirQualityNetwork', 'AirQualityStationEoICode', 'SamplingPoint', 'SamplingProcess',
+             'AirPollutantCode',
              'DatetimeEnd', 'Verification', 'Sample', 'AveragingTime'], axis=1, inplace=True)
 
     # clean invalid rows
@@ -30,6 +31,13 @@ def clean_and_export_data(path: str):
         new_path = str(path.absolute()).replace('original', 'cleaned')
         df.to_csv(new_path, index=False)
         print(new_path)
+
+
+def remove_cs_index():
+    for path in Path('../../data/main/cleaned/pm25').rglob('*.csv'):
+        df = pd.read_csv(path)
+        df.drop(['Unnamed: 0'], axis=1, inplace=True)
+        df.to_csv(path, index=False)
 
 
 def merge_two_sets(path1: str, path2: str) -> DataFrame:
