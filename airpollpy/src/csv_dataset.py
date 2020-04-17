@@ -28,6 +28,18 @@ def clean_and_export_data(path: str):
         print(path.absolute())
         df = clean_pm10_timeseries(path.absolute())
         new_path = str(path.absolute()).replace('original', 'cleaned')
-        df.to_csv(new_path)
+        df.to_csv(new_path, index=False)
         print(new_path)
+
+
+def merge_two_sets(path1: str, path2: str) -> DataFrame:
+    df1 = get_dataframe(path1)
+    df2 = get_dataframe(path2)
+
+    merged = pd.concat([df1, df2])
+    # merged = pd.merge(df1, df2)
+    return merged
+
+
+
 

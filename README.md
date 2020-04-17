@@ -3,7 +3,7 @@ Project around air pollution in Python
 
 ## What is it?
 The goal of the project is to retrieve and analyze data from the European Environment Agency.
-Initially inspired by this article [article](https://www.eea.europa.eu/themes/air/air-quality-and-covid19/air-quality-and-covid19).
+Initially inspired by this [article](https://www.eea.europa.eu/themes/air/air-quality-and-covid19/air-quality-and-covid19).
 
 
 ## Getting the data
