@@ -69,3 +69,4 @@ def get_mean_frame(df: DataFrame, pollutant: POLLUTANT) -> DataFrame:
     df.rename({"Concentration": 'mean ' + pollutant.name + ' (µg/m3)'}, axis=1, inplace=True)
     return df
 
+
