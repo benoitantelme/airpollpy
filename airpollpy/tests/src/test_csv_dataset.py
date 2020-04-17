@@ -1,5 +1,5 @@
 from src import csv_dataset
-from src.csv_dataset import merge_two_sets
+from src.csv_dataset import concat_two_sets
 
 
 def test_get_dataframe():
@@ -14,9 +14,10 @@ def test_get_dataframe_encoding():
     assert len(df.columns) == 3
 
 
-def test_merge_two_sets():
+def test_concat_two_sets():
     path = "../../data/main/cleaned/o3/London/"
-    merged = merge_two_sets(path + 'GB_7_21131_2013_timeseries.csv', path + 'GB_7_21151_2013_timeseries.csv')
-    print()
+    merged = concat_two_sets(path + 'GB_7_21131_2013_timeseries.csv', path + 'GB_7_21151_2013_timeseries.csv')
+    assert len(merged.columns) == 6
+    assert len(merged) == 17269
 
 

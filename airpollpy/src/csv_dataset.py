@@ -40,13 +40,11 @@ def remove_cs_index():
         df.to_csv(path, index=False)
 
 
-def merge_two_sets(path1: str, path2: str) -> DataFrame:
+def concat_two_sets(path1: str, path2: str) -> DataFrame:
     df1 = get_dataframe(path1)
     df2 = get_dataframe(path2)
 
-    merged = pd.concat([df1, df2])
-    # merged = pd.merge(df1, df2)
-    return merged
+    return pd.concat([df1, df2])
 
 
 
