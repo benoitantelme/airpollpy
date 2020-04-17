@@ -1,6 +1,5 @@
 import pandas as pd
 from pandas import DataFrame
-import os
 from pathlib import Path
 
 
@@ -45,6 +44,13 @@ def concat_two_sets(path1: str, path2: str) -> DataFrame:
     df2 = get_dataframe(path2)
 
     return pd.concat([df1, df2])
+
+
+def concat_sets(dir_path: str, year: str) -> DataFrame:
+    df = DataFrame()
+    for path in Path(dir_path).rglob('*' + year + '*.csv'):
+        df = pd.concat([df, get_dataframe(path)])
+    return df
 
 
 

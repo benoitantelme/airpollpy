@@ -1,12 +1,12 @@
 from data.constants import POLLUTANT
 from pandas import DataFrame, concat, merge
-from src import csv_dataset
+from src import emissions
 
 STATISTIC_VALUE = "statistic_value (µg/m3)"
 
 
 def get_stations_data(path: str) -> DataFrame:
-    df = csv_dataset.get_dataframe(path, 'iso-8859-1')
+    df = emissions.get_dataframe(path, 'iso-8859-1')
     return df
 
 
