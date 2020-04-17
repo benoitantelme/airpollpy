@@ -1,8 +1,9 @@
+import os
 import pandas as pd
 from pandas import DataFrame
 from pathlib import Path
 
-from data.constants import POLLUTANT
+from data.constants import POLLUTANT, YEAR, CITY
 
 
 def get_dataframe(path: str, encoding=None) -> DataFrame:
@@ -69,4 +70,17 @@ def get_mean_frame(df: DataFrame, pollutant: POLLUTANT) -> DataFrame:
     df.rename({"Concentration": 'mean ' + pollutant.name + ' (µg/m3)'}, axis=1, inplace=True)
     return df
 
+
+def create_mean_sets() -> DataFrame:
+    path = "../../data/main/cleaned/"
+    for pollutant in POLLUTANT:
+        for city in CITY:
+            tmp_path = path + pollutant.name + os.path.sep + city.name + os.path.sep
+            for year in YEAR:
+                df = concat_sets(tmp_path, year.name)
+                if not df.empty:
+                    df = get_mean_frame(df, pollutant)
+                    df.to_csv("../../data/main/cleaned/mean/" + city.name + '_' + pollutant.name +
+                              '_' + year.name + '.csv',
+                              index=False)
 
