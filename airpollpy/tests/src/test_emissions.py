@@ -1,5 +1,6 @@
+from data.constants import POLLUTANT
 from src import emissions
-from src.emissions import concat_two_sets, concat_sets
+from src.emissions import concat_two_sets, concat_sets, get_mean_frame
 
 
 def test_get_dataframe():
@@ -26,6 +27,15 @@ def test_concat_sets():
     concat = concat_sets(path, '2013')
     assert len(concat.columns) == 6
     assert len(concat) == 68554
+
+
+def test_get_mean_frame():
+    path = "../../data/main/cleaned/o3/Amsterdam/"
+    df = concat_sets(path, '2013')
+    df = get_mean_frame(df, POLLUTANT.o3)
+    print()
+
+
 
 
 

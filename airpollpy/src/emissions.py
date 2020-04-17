@@ -2,6 +2,8 @@ import pandas as pd
 from pandas import DataFrame
 from pathlib import Path
 
+from data.constants import POLLUTANT
+
 
 def get_dataframe(path: str, encoding=None) -> DataFrame:
     if not encoding:
@@ -39,6 +41,14 @@ def remove_cs_index():
         df.to_csv(path, index=False)
 
 
+def remove_duplicates(pollutant: POLLUTANT):
+    # shouldn't be there but found out the original files actually had lots of duplicates
+    for path in Path('../../data/main/cleaned/' + pollutant.name).rglob('*.csv'):
+        df = pd.read_csv(path)
+        df.drop_duplicates(inplace=True)
+        df.to_csv(path, index=False)
+
+
 def concat_two_sets(path1: str, path2: str) -> DataFrame:
     df1 = get_dataframe(path1)
     df2 = get_dataframe(path2)
@@ -53,5 +63,9 @@ def concat_sets(dir_path: str, year: str) -> DataFrame:
     return df
 
 
-
+def get_mean_frame(df: DataFrame, pollutant: POLLUTANT) -> DataFrame:
+    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "DatetimeBegin"],
+                    as_index=False)["Concentration"].mean()
+    df.rename({"Concentration": 'mean ' + pollutant.name + ' (µg/m3)'}, axis=1, inplace=True)
+    return df
 
