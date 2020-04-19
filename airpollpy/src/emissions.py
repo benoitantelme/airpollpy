@@ -3,7 +3,7 @@ import pandas as pd
 from pandas import DataFrame
 from pathlib import Path
 
-from data.constants import POLLUTANT, YEAR, CITY
+from data.constants import POLLUTANT, YEAR, CITY, UNDERSCORE
 
 
 def get_dataframe(path: str, encoding=None) -> DataFrame:
@@ -57,9 +57,9 @@ def concat_two_sets(path1: str, path2: str) -> DataFrame:
     return pd.concat([df1, df2])
 
 
-def concat_sets(dir_path: str, year: str) -> DataFrame:
+def concat_sets(dir_path: str, year: YEAR) -> DataFrame:
     df = DataFrame()
-    for path in Path(dir_path).rglob('*' + year + '*.csv'):
+    for path in Path(dir_path).rglob('*' + year.name + '*.csv'):
         df = pd.concat([df, get_dataframe(path)])
     return df
 
@@ -77,11 +77,11 @@ def create_mean_sets() -> DataFrame:
         for city in CITY:
             tmp_path = path + pollutant.name + os.path.sep + city.name + os.path.sep
             for year in YEAR:
-                df = concat_sets(tmp_path, year.name)
+                df = concat_sets(tmp_path, year)
                 if not df.empty:
                     df = get_mean_frame(df, pollutant)
-                    df.to_csv("../../data/main/cleaned/mean/" + city.name + '_' + pollutant.name +
-                              '_' + year.name + '.csv',
+                    df.to_csv("../../data/main/cleaned/mean/" + city.name + UNDERSCORE + pollutant.name +
+                              UNDERSCORE + year.name + '.csv',
                               index=False)
 
 
