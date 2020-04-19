@@ -73,8 +73,16 @@ The data in *data/main/cleaned* is available per pollutant, city and then a file
 The goal is going to be to merge every stations value and average it to a mean for the whhole city concerned.
 
 
+## Visualization of the pollutants emissions data
+TODO
+
+
 ## Dependencies
 - [Pandas](https://pandas.pydata.org/)
+- [Plotly](https://plotly.com/)
+- [Matplotlib](https://matplotlib.org/)
+- [Seaborn](https://seaborn.pydata.org/)
+
 
 
 ## Source:
