@@ -84,3 +84,13 @@ def create_mean_sets() -> DataFrame:
                               '_' + year.name + '.csv',
                               index=False)
 
+
+def mean_per_day(df: DataFrame) -> DataFrame:
+    measure_name = df.columns.values[-1]
+
+    df['DatetimeBegin'] = df['DatetimeBegin'].apply(lambda x: pd.to_datetime(x))
+    df['Date'] = df['DatetimeBegin'].apply(lambda x: x.date())
+    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "Date"],
+                    as_index=False)[measure_name].mean().round(2)
+    return df
+
