@@ -3,7 +3,7 @@ import pandas as pd
 from pandas import DataFrame
 from pathlib import Path
 
-from data.constants import POLLUTANT, YEAR, CITY, UNDERSCORE
+from data.constants import POLLUTANT, YEAR, CITY, UNDERSCORE, SPACE, HYPHEN
 
 
 def get_dataframe(path: str, encoding=None) -> DataFrame:
@@ -85,12 +85,27 @@ def create_mean_sets() -> DataFrame:
                               index=False)
 
 
+def set_date(df: DataFrame) -> DataFrame:
+    df['DatetimeBegin'] = df['DatetimeBegin'].apply(lambda x: pd.to_datetime(x))
+    df['Date'] = df['DatetimeBegin'].apply(lambda x: x.date())
+    df.drop('DatetimeBegin', axis=1, inplace=True)
+    return df
+
+
 def mean_per_day(df: DataFrame) -> DataFrame:
     measure_name = df.columns.values[-1]
 
-    df['DatetimeBegin'] = df['DatetimeBegin'].apply(lambda x: pd.to_datetime(x))
-    df['Date'] = df['DatetimeBegin'].apply(lambda x: x.date())
+    df = set_date(df)
     df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "Date"],
                     as_index=False)[measure_name].mean().round(2)
     return df
 
+
+def mean_per_month(df: DataFrame) -> DataFrame:
+    measure_name = df.columns.values[-1]
+
+    df = set_date(df)
+    df['Date'] = df['Date'].apply(lambda x: str(x.year) + HYPHEN + x.strftime('%m'))
+    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "Date"],
+                    as_index=False)[measure_name].mean().round(2)
+    return df

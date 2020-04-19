@@ -1,8 +1,7 @@
-import pandas as pd
 from pathlib import Path
 from data.constants import POLLUTANT, YEAR
 from src import emissions
-from src.emissions import concat_two_sets, concat_sets, get_mean_frame, get_dataframe, mean_per_day
+from src.emissions import concat_two_sets, concat_sets, get_mean_frame, get_dataframe, mean_per_day, mean_per_month
 from datetime import datetime
 
 
@@ -51,16 +50,19 @@ def test_get_mean_frame():
 def test_mean_per_day():
     df = get_dataframe("../../data/main/cleaned/mean/Amsterdam_o3_2013.csv")
     measure_name = df.columns.values[-1]
-    expected_mean = df[df['DatetimeBegin'].str.contains('2013-01-01')][df.columns.values[-1]].sum()/24
+    expected_mean = df[df['DatetimeBegin'].str.contains('2013-01-01')][measure_name].sum()/24
+
     df = mean_per_day(df)
-
     first_day = datetime.strptime('2013-01-01', '%Y-%m-%d')
-
     assert expected_mean.round(2) == df[df["Date"] == first_day.date()][measure_name].item()
 
 
+def test_mean_per_month():
+    df = get_dataframe("../../data/main/cleaned/mean/Amsterdam_o3_2013.csv")
+    measure_name = df.columns.values[-1]
+    expected_mean = df[df['DatetimeBegin'].str.contains('2013-01')][measure_name].sum() / (24*31)
 
-
-
+    df = mean_per_month(df)
+    assert expected_mean.round(2) == df[df["Date"] == '2013-01'][measure_name].item()
 
 
