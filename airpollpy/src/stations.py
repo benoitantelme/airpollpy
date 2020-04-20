@@ -22,20 +22,20 @@ def get_stations_filtered(df: DataFrame, func) -> DataFrame:
 
 def get_worst_stations(path: str, pollutant: POLLUTANT) -> DataFrame:
     df = get_stations_filtered(get_stations_data(path), lambda x: x.idxmax())
-    df.rename({STATISTIC_VALUE: 'max ' + pollutant.name + ' (µg/m3)'}, axis=1, inplace=True)
+    df.rename({STATISTIC_VALUE: f'max {pollutant.name} (µg/m3)'}, axis=1, inplace=True)
     return df
 
 
 def get_best_stations(path: str, pollutant: POLLUTANT) -> DataFrame:
     df = get_stations_filtered(get_stations_data(path), lambda x: x.idxmin())
-    df.rename({STATISTIC_VALUE: 'min ' + pollutant.name + ' (µg/m3)'}, axis=1, inplace=True)
+    df.rename({STATISTIC_VALUE: f'min {pollutant.name} (µg/m3)'}, axis=1, inplace=True)
     return df
 
 
 def get_mean_per_city(path: str, pollutant: POLLUTANT) -> DataFrame:
     df = get_stations_data(path)
     df = df.groupby(["country iso code", "city_name"], as_index=False)[STATISTIC_VALUE].mean()
-    df.rename({STATISTIC_VALUE: 'mean ' + pollutant.name + ' (µg/m3)'}, axis=1, inplace=True)
+    df.rename({STATISTIC_VALUE: f'mean {pollutant.name} (µg/m3)'}, axis=1, inplace=True)
     return df
 
 

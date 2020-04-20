@@ -19,7 +19,7 @@ def test_get_dataframe_encoding():
 
 def test_concat_two_sets():
     path = "../../data/main/cleaned/o3/London/"
-    merged = concat_two_sets(path + 'GB_7_21131_2013_timeseries.csv', path + 'GB_7_21151_2013_timeseries.csv')
+    merged = concat_two_sets(f'{path}GB_7_21131_2013_timeseries.csv', f'{path}GB_7_21151_2013_timeseries.csv')
     assert len(merged.columns) == 6
     assert len(merged) == 17269
 
