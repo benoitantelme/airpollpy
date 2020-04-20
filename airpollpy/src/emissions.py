@@ -1,9 +1,11 @@
 import os
+from datetime import datetime
+
 import pandas as pd
 from pandas import DataFrame
 from pathlib import Path
 
-from data.constants import POLLUTANT, YEAR, CITY
+from data.constants import POLLUTANT, YEAR, CITY, UNDERSCORE, SPACE, HYPHEN
 
 
 def get_dataframe(path: str, encoding=None) -> DataFrame:
@@ -44,7 +46,7 @@ def remove_cs_index():
 
 def remove_duplicates(pollutant: POLLUTANT):
     # shouldn't be there but found out the original files actually had lots of duplicates
-    for path in Path('../../data/main/cleaned/' + pollutant.name).rglob('*.csv'):
+    for path in Path(f'../../data/main/cleaned/{pollutant.name}').rglob('*.csv'):
         df = pd.read_csv(path)
         df.drop_duplicates(inplace=True)
         df.to_csv(path, index=False)
@@ -57,9 +59,9 @@ def concat_two_sets(path1: str, path2: str) -> DataFrame:
     return pd.concat([df1, df2])
 
 
-def concat_sets(dir_path: str, year: str) -> DataFrame:
+def concat_sets(dir_path: str, year: YEAR) -> DataFrame:
     df = DataFrame()
-    for path in Path(dir_path).rglob('*' + year + '*.csv'):
+    for path in Path(dir_path).rglob(f'*{year.name}*.csv'):
         df = pd.concat([df, get_dataframe(path)])
     return df
 
@@ -67,7 +69,7 @@ def concat_sets(dir_path: str, year: str) -> DataFrame:
 def get_mean_frame(df: DataFrame, pollutant: POLLUTANT) -> DataFrame:
     df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "DatetimeBegin"],
                     as_index=False)["Concentration"].mean()
-    df.rename({"Concentration": 'mean ' + pollutant.name + ' (µg/m3)'}, axis=1, inplace=True)
+    df.rename({"Concentration": f'mean {pollutant.name} (µg/m3)'}, axis=1, inplace=True)
     return df
 
 
@@ -77,10 +79,34 @@ def create_mean_sets() -> DataFrame:
         for city in CITY:
             tmp_path = path + pollutant.name + os.path.sep + city.name + os.path.sep
             for year in YEAR:
-                df = concat_sets(tmp_path, year.name)
+                df = concat_sets(tmp_path, year)
                 if not df.empty:
                     df = get_mean_frame(df, pollutant)
-                    df.to_csv("../../data/main/cleaned/mean/" + city.name + '_' + pollutant.name +
-                              '_' + year.name + '.csv',
+                    df.to_csv(f"../../data/main/cleaned/mean/{city.name}_{pollutant.name}_{year.name}.csv",
                               index=False)
 
+
+def set_date(df: DataFrame) -> DataFrame:
+    df['DatetimeBegin'] = df['DatetimeBegin'].apply(lambda x: pd.to_datetime(x))
+    df['Date'] = df['DatetimeBegin'].apply(lambda x: x.date())
+    df.drop('DatetimeBegin', axis=1, inplace=True)
+    return df
+
+
+def mean_per_day(df: DataFrame) -> DataFrame:
+    measure_name = df.columns.values[-1]
+
+    df = set_date(df)
+    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "Date"],
+                    as_index=False)[measure_name].mean().round(2)
+    return df
+
+
+def mean_per_month(df: DataFrame) -> DataFrame:
+    measure_name = df.columns.values[-1]
+
+    df = set_date(df)
+    df['Date'] = df['Date'].apply(lambda x: x.replace(day=1))
+    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "Date"],
+                    as_index=False)[measure_name].mean().round(2)
+    return df

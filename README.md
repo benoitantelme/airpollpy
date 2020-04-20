@@ -1,9 +1,18 @@
 # airpollpy
 Project around air pollution in Python
 
+
 ## What is it?
 The goal of the project is to retrieve and analyze data from the European Environment Agency.
 Initially inspired by this [article](https://www.eea.europa.eu/themes/air/air-quality-and-covid19/air-quality-and-covid19).
+
+
+## Pollutants
+I decided to focus on:
+- [O3](https://www.londonair.org.uk/LondonAir/guide/WhatIsO3.aspx)
+- [NO2](https://www.londonair.org.uk/LondonAir/guide/WhatIsNO2.aspx)
+- [PM10](https://uk-air.defra.gov.uk/air-pollution/daqi?view=more-info&pollutant=pm10#pollutant)
+- [PM2.5](https://uk-air.defra.gov.uk/air-pollution/daqi?view=more-info&pollutant=pm25#pollutant)
 
 
 ## Getting the data
@@ -73,8 +82,26 @@ The data in *data/main/cleaned* is available per pollutant, city and then a file
 The goal is going to be to merge every stations value and average it to a mean for the whhole city concerned.
 
 
+## Visualization of the pollutants emissions data
+After looking at the curve, some data are missing for 2014 in Paris and the amount of data is huge and hard to plot. 
+So I decided to focus on data from 2015 first and remove the older data.
+
+![NO2 Plot](data/plot/emissions/main/plot_no2.png)
+
+![O3 Plot](data/plot/emissions/main/plot_o3.png)
+
+![PM10 Plot](data/plot/emissions/main/plot_pm10.png)
+
+![PM25 Plot](data/plot/emissions/main/plot_pm25.png)
+There is still data missing for pm2.5 emissions during 2019 but it looks better overall.
+We can see that the NO2 emissions are lower during the covid-19 lockdown, while pm2.5 and pm10 seems for some cities to be lower.
+
+
 ## Dependencies
 - [Pandas](https://pandas.pydata.org/)
+- [Plotly](https://plotly.com/)
+- [Matplotlib](https://matplotlib.org/)
+- [Seaborn](https://seaborn.pydata.org/)
 
 
 ## Source:

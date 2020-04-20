@@ -16,9 +16,9 @@ def plot_european_cities_pollutant(pollutant: POLLUTANT, save=False):
 
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
     p = main_cities_df.plot.bar(x='city_name', figsize=(12, 6),
-                                title='European cities ' + pollutant.name + ' emissions in 2013')
+                                title=f'European cities {pollutant.name} emissions in 2013')
     if save:
-        p.get_figure().savefig('stations_plot_' + pollutant.name + '.png')
+        p.get_figure().savefig(f'stations_plot_{pollutant.name}.png')
     plt.show()
 
 
@@ -37,11 +37,8 @@ def plot_best_stations_tables(pollutant: POLLUTANT, save=False):
         cells=dict(values=[df['country iso code'], df['city_name'], df['station_european_code'], df[STATISTIC_VALUE],
                            df['mean'], df['diff'], df['diff %']],
                    fill_color='lightgrey', align='center'))])
-    fig.update_layout(title='Best stations for ' + pollutant.name + ' emissions in 2013')
+    fig.update_layout(title=f'Best stations for {pollutant.name} emissions in 2013')
     fig.show()
-
-    if save:
-        fig.write_image('stations_plot_' + pollutant.name + '.png')
 
 
 def plot_all_best_stations():
