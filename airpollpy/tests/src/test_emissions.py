@@ -47,14 +47,16 @@ def test_get_mean_frame():
     assert mean == (total/nbr)
 
 
+first_day = datetime.strptime('2013-01-01', '%Y-%m-%d').date()
+
+
 def test_mean_per_day():
     df = get_dataframe("../../data/main/cleaned/mean/Amsterdam_o3_2013.csv")
     measure_name = df.columns.values[-1]
     expected_mean = df[df['DatetimeBegin'].str.contains('2013-01-01')][measure_name].sum()/24
 
     df = mean_per_day(df)
-    first_day = datetime.strptime('2013-01-01', '%Y-%m-%d')
-    assert expected_mean.round(2) == df[df["Date"] == first_day.date()][measure_name].item()
+    assert expected_mean.round(2) == df[df["Date"] == first_day][measure_name].item()
 
 
 def test_mean_per_month():
@@ -63,6 +65,6 @@ def test_mean_per_month():
     expected_mean = df[df['DatetimeBegin'].str.contains('2013-01')][measure_name].sum() / (24*31)
 
     df = mean_per_month(df)
-    assert expected_mean.round(2) == df[df["Date"] == '2013-01'][measure_name].item()
+    assert expected_mean.round(2) == df[df["Date"] == first_day][measure_name].item()
 
 

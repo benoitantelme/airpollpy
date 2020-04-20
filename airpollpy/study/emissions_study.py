@@ -27,9 +27,9 @@ def print_mean_per_pol_city(city: CITY, pollutant: POLLUTANT, save=False):
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
     axes = sns.lineplot(x="Date", y=f'mean {pollutant.name} (µg/m3)', data=df)
     axes.set_title(f'{city.name} {pollutant.name} emissions')
-    plt.xticks(rotation=40)
+    # plt.xticks(rotation=40, ha='right')
     plt.tight_layout()
-    # plt.show()
+    plt.show()
     if save:
         axes.get_figure().savefig(f'{city.name}_plot_{pollutant.name}.png')
     plt.close()
@@ -42,5 +42,5 @@ def plot_all_best_stations(save: bool):
 
 
 # print_mean_per_pol_city_year(CITY.Amsterdam, POLLUTANT.o3, YEAR['2013'])
-# print_mean_per_pol_city(CITY.Amsterdam, POLLUTANT.o3, True)
-plot_all_best_stations(True)
+print_mean_per_pol_city(CITY.Amsterdam, POLLUTANT.o3, False)
+# plot_all_best_stations(True)

@@ -1,4 +1,6 @@
 import os
+from datetime import datetime
+
 import pandas as pd
 from pandas import DataFrame
 from pathlib import Path
@@ -104,7 +106,7 @@ def mean_per_month(df: DataFrame) -> DataFrame:
     measure_name = df.columns.values[-1]
 
     df = set_date(df)
-    df['Date'] = df['Date'].apply(lambda x: str(x.year) + HYPHEN + x.strftime('%m'))
+    df['Date'] = df['Date'].apply(lambda x: x.replace(day=1))
     df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "Date"],
                     as_index=False)[measure_name].mean().round(2)
     return df
