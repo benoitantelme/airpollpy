@@ -65,19 +65,3 @@ def plot_pollutant(pollutant: POLLUTANT, save=False):
     plt.close()
 
 
-# print_mean_per_pol_city_year(CITY.Amsterdam, POLLUTANT.o3, YEAR['2013'])
-# plot_mean_per_pol_city(CITY.Madrid, POLLUTANT.pm25, False)
-# plot_all_best_stations(True)
-
-for pol in POLLUTANT:
-    plot_pollutant(pol, True)
-# plot_pollutant(POLLUTANT.pm25, True)
-
-#
-# for ext in ('*2013*.csv', '*2014*.csv'):
-#     for path in Path(f'../../data/main/cleaned/mean').rglob(ext):
-#         os.remove(path)
-
-
-
-
