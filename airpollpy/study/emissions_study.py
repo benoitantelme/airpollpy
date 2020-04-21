@@ -4,8 +4,11 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 from pathlib import Path
+
+from pandas import DataFrame
+
 from data.constants import POLLUTANT, UNDERSCORE, SPACE, YEAR, CITY
-from src.emissions import get_dataframe, mean_per_day, mean_per_month
+from src.emissions import get_dataframe, mean_per_day, mean_per_month, create_pollutant_df
 
 
 def plot_mean_per_pol_city_year(city: CITY, pollutant: POLLUTANT, year: YEAR):
@@ -44,37 +47,21 @@ def plot_all_best_stations(save: bool):
 
 
 def plot_pollutant(pollutant: POLLUTANT, save=False):
-    df = pd.DataFrame()
-    for city in CITY:
-        city_df = pd.DataFrame()
-        for path in Path("../../data/main/cleaned/mean/").rglob(f'{city.name}_{pollutant.name}_*.csv'):
-            print(path.absolute())
-            df_tmp = mean_per_month(get_dataframe(path))
-            city_df = pd.concat([city_df, df_tmp])
-        city_df['city'] = city.name
-        df = pd.concat([df, city_df])
+    df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
 
     fig, axes = plt.subplots(figsize=(14, 6))
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
     axes = sns.lineplot(x="Date", y=f'mean {pollutant.name} (µg/m3)', data=df, hue='city')
     axes.set_title(f'{pollutant.name} emissions')
     plt.tight_layout()
-    # plt.show()
+    plt.show()
     if save:
         axes.get_figure().savefig(f'plot_{pollutant.name}.png')
     plt.close()
 
 
 def plot_violin_pollutant(pollutant: POLLUTANT, save=False):
-    df = pd.DataFrame()
-    for city in CITY:
-        city_df = pd.DataFrame()
-        for path in Path("../../data/main/cleaned/mean/").rglob(f'{city.name}_{pollutant.name}_*.csv'):
-            print(path.absolute())
-            df_tmp = mean_per_month(get_dataframe(path))
-            city_df = pd.concat([city_df, df_tmp])
-        city_df['city'] = city.name
-        df = pd.concat([df, city_df])
+    df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
 
     fig, axes = plt.subplots(figsize=(14, 6))
     sns.set_style("whitegrid", {'grid.linestyle': '-'})

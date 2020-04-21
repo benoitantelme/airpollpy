@@ -110,3 +110,16 @@ def mean_per_month(df: DataFrame) -> DataFrame:
     df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "Date"],
                     as_index=False)[measure_name].mean().round(2)
     return df
+
+
+def create_pollutant_df(pollutant: POLLUTANT, main_path: str) -> DataFrame:
+    df = pd.DataFrame()
+    for city in CITY:
+        city_df = pd.DataFrame()
+        for path in Path(main_path).rglob(f'{city.name}_{pollutant.name}_*.csv'):
+            print(path.absolute())
+            df_tmp = mean_per_month(get_dataframe(path))
+            city_df = pd.concat([city_df, df_tmp])
+        city_df['city'] = city.name
+        df = pd.concat([df, city_df])
+    return df
