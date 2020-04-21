@@ -107,6 +107,14 @@ Looking at the evolution throughout the years:
 There is still missing data for Paris pm2.5 emissions during 2019.
 We can see that the NO2 emissions are lower during the 2020 covid-19 lockdown, while pm2.5 and pm10 seems for some cities only to be lower.
 
+Only looking at 2019 up to now:
+![NO2 Plot](data/plot/emissions/main/plot_no2_last_year.png)
+
+![PM10 Plot](data/plot/emissions/main/plot_pm10_last_year.png)
+
+![PM25 Plot](data/plot/emissions/main/plot_pm25_last_year.png)
+We can see that, as mentioned in the EEA article, the NO2 diminution explained by traffic reduction is clear.
+While other pollutants reduction is not necessarily evident.
 
 ## Dependencies
 - [Pandas](https://pandas.pydata.org/)

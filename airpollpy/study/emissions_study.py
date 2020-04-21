@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -70,3 +71,14 @@ def plot_violin_pollutant(pollutant: POLLUTANT, save=False):
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
     axes = sns.violinplot(x="city", y=f'mean {pollutant.name} (µg/m3)', data=df, palette='terrain')
     finalize_plot(axes, f'{pollutant.name} emissions', save, f'violin_plot_{pollutant.name}.png')
+
+
+def plot_pollutant_last_years(pollutant: POLLUTANT, save=False):
+    df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
+    df = df[df['Date'] > datetime.strptime('2019-01-01', '%Y-%m-%d').date()]
+    plt.subplots(figsize=(14, 6))
+    sns.set_style("whitegrid", {'grid.linestyle': '-'})
+    axes = sns.lineplot(x="Date", y=f'mean {pollutant.name} (µg/m3)', data=df, hue='city')
+    finalize_plot(axes, f'{pollutant.name} emissions', save, f'plot_{pollutant.name}_last_year.png')
+
+
