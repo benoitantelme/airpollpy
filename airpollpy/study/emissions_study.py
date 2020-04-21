@@ -65,3 +65,24 @@ def plot_pollutant(pollutant: POLLUTANT, save=False):
     plt.close()
 
 
+def plot_violin_pollutant(pollutant: POLLUTANT, save=False):
+    df = pd.DataFrame()
+    for city in CITY:
+        city_df = pd.DataFrame()
+        for path in Path("../../data/main/cleaned/mean/").rglob(f'{city.name}_{pollutant.name}_*.csv'):
+            print(path.absolute())
+            df_tmp = mean_per_month(get_dataframe(path))
+            city_df = pd.concat([city_df, df_tmp])
+        city_df['city'] = city.name
+        df = pd.concat([df, city_df])
+
+    fig, axes = plt.subplots(figsize=(14, 6))
+    sns.set_style("whitegrid", {'grid.linestyle': '-'})
+    axes = sns.violinplot(x="city", y=f'mean {pollutant.name} (µg/m3)', data=df, palette='terrain')
+    axes.set_title(f'{pollutant.name} emissions')
+    plt.show()
+    if save:
+        axes.get_figure().savefig(f'violin_plot_{pollutant.name}.png')
+    plt.close()
+
+

@@ -86,6 +86,17 @@ The goal is going to be to merge every stations value and average it to a mean f
 After looking at the curve, some data are missing for 2014 in Paris and the amount of data is huge and hard to plot. 
 So I decided to focus on data from 2015 first and remove the older data.
 
+Looking at the whole data set from 2015 to 2020 included:
+![NO2 Violin Plot](data/plot/emissions/main/violin_plot_no2.png)
+
+![O3 Violin Plot](data/plot/emissions/main/violin_plot_o3.png)
+
+![PM10 Violin Plot](data/plot/emissions/main/violin_plot_pm10.png)
+
+![PM25 Violin Plot](data/plot/emissions/main/violin_plot_pm25.png)
+
+
+Looking at the evolution throughout the years:
 ![NO2 Plot](data/plot/emissions/main/plot_no2.png)
 
 ![O3 Plot](data/plot/emissions/main/plot_o3.png)
@@ -93,8 +104,8 @@ So I decided to focus on data from 2015 first and remove the older data.
 ![PM10 Plot](data/plot/emissions/main/plot_pm10.png)
 
 ![PM25 Plot](data/plot/emissions/main/plot_pm25.png)
-There is still data missing for pm2.5 emissions during 2019 but it looks better overall.
-We can see that the NO2 emissions are lower during the covid-19 lockdown, while pm2.5 and pm10 seems for some cities to be lower.
+There is still missing data for Paris pm2.5 emissions during 2019.
+We can see that the NO2 emissions are lower during the 2020 covid-19 lockdown, while pm2.5 and pm10 seems for some cities only to be lower.
 
 
 ## Dependencies
