@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from pathlib import Path
 
+from matplotlib.axes import Axes
 from pandas import DataFrame
 
 from data.constants import POLLUTANT, UNDERSCORE, SPACE, YEAR, CITY
@@ -46,30 +47,26 @@ def plot_all_best_stations(save: bool):
             plot_mean_per_pol_city(city, pol, save)
 
 
+def finalize_plot(axes: Axes, title: str, save: bool, name: str):
+    axes.set_title(title)
+    plt.tight_layout()
+    if save:
+        axes.get_figure().savefig(name)
+    plt.show()
+    plt.close()
+
+
 def plot_pollutant(pollutant: POLLUTANT, save=False):
     df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
-
-    fig, axes = plt.subplots(figsize=(14, 6))
+    plt.subplots(figsize=(14, 6))
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
     axes = sns.lineplot(x="Date", y=f'mean {pollutant.name} (µg/m3)', data=df, hue='city')
-    axes.set_title(f'{pollutant.name} emissions')
-    plt.tight_layout()
-    plt.show()
-    if save:
-        axes.get_figure().savefig(f'plot_{pollutant.name}.png')
-    plt.close()
+    finalize_plot(axes, f'{pollutant.name} emissions', save, f'plot_{pollutant.name}.png')
 
 
 def plot_violin_pollutant(pollutant: POLLUTANT, save=False):
     df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
-
-    fig, axes = plt.subplots(figsize=(14, 6))
+    plt.subplots(figsize=(14, 6))
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
     axes = sns.violinplot(x="city", y=f'mean {pollutant.name} (µg/m3)', data=df, palette='terrain')
-    axes.set_title(f'{pollutant.name} emissions')
-    plt.show()
-    if save:
-        axes.get_figure().savefig(f'violin_plot_{pollutant.name}.png')
-    plt.close()
-
-
+    finalize_plot(axes, f'{pollutant.name} emissions', save, f'violin_plot_{pollutant.name}.png')
