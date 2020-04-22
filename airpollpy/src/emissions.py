@@ -1,11 +1,8 @@
 import os
-from datetime import datetime
-
 import pandas as pd
 from pandas import DataFrame
 from pathlib import Path
-
-from data.constants import POLLUTANT, YEAR, CITY, UNDERSCORE, SPACE, HYPHEN
+from data.constants import POLLUTANT, YEAR, CITY, CITY_NAME, DATE_NAME, PREVIOUS_YEAR_VALUE, YEAR_VALUE
 
 
 def get_dataframe(path: str, encoding=None) -> DataFrame:
@@ -87,8 +84,8 @@ def create_mean_sets() -> DataFrame:
 
 
 def set_date(df: DataFrame) -> DataFrame:
-    df['DatetimeBegin'] = df['DatetimeBegin'].apply(lambda x: pd.to_datetime(x))
-    df['Date'] = df['DatetimeBegin'].apply(lambda x: x.date())
+    df['DatetimeBegin'] = pd.to_datetime(df['DatetimeBegin'])
+    df[DATE_NAME] = df['DatetimeBegin'].apply(lambda x: x.normalize())
     df.drop('DatetimeBegin', axis=1, inplace=True)
     return df
 
@@ -97,7 +94,7 @@ def mean_per_day(df: DataFrame) -> DataFrame:
     measure_name = df.columns.values[-1]
 
     df = set_date(df)
-    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "Date"],
+    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", DATE_NAME],
                     as_index=False)[measure_name].mean().round(2)
     return df
 
@@ -106,7 +103,49 @@ def mean_per_month(df: DataFrame) -> DataFrame:
     measure_name = df.columns.values[-1]
 
     df = set_date(df)
-    df['Date'] = df['Date'].apply(lambda x: x.replace(day=1))
-    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "Date"],
+    df[DATE_NAME] = df['Date'].apply(lambda x: x.replace(day=1))
+    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", DATE_NAME],
                     as_index=False)[measure_name].mean().round(2)
     return df
+
+
+def create_pollutant_df(pollutant: POLLUTANT, main_path: str) -> DataFrame:
+    df = pd.DataFrame()
+    for city in CITY:
+        city_df = pd.DataFrame()
+        for path in Path(main_path).rglob(f'{city.name}_{pollutant.name}_*.csv'):
+            print(path.absolute())
+            df_tmp = mean_per_month(get_dataframe(path))
+            city_df = pd.concat([city_df, df_tmp])
+        city_df[CITY_NAME] = city.name
+        df = pd.concat([df, city_df])
+    return df
+
+
+def compare_year_to_year(df: DataFrame) -> DataFrame:
+    measure_name = df.columns.values[-2]
+
+    # create date info and clean
+    df['Year'] = df[DATE_NAME].apply(lambda x: x.year)
+    df['DM'] = df[DATE_NAME].apply(lambda x: f'{x.day}-{x.month}')
+    first_year = df['Year'].iloc[0]
+    df.reset_index(drop=True, inplace=True)
+
+    # copy first year measurement
+    df[PREVIOUS_YEAR_VALUE] = df[df['Year'] == first_year][measure_name]
+    df[PREVIOUS_YEAR_VALUE] = df.groupby([CITY_NAME, 'DM'], as_index=False)[PREVIOUS_YEAR_VALUE].transform('sum')
+
+    # calculate the diff on second year
+    df = df[df['Year'] != first_year]
+    df[YEAR_VALUE] = df[measure_name]
+    df['diff'] = df[YEAR_VALUE] - df[PREVIOUS_YEAR_VALUE]
+    df['diff %'] = df['diff'] * 100 / df[PREVIOUS_YEAR_VALUE]
+
+    # cleanup
+    df.drop(measure_name, axis=1, inplace=True)
+    df.drop('DM', axis=1, inplace=True)
+    df.drop('Year', axis=1, inplace=True)
+
+    return df
+
+
