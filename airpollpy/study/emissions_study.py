@@ -80,19 +80,18 @@ def plot_pollutant_last_years(pollutant: POLLUTANT, save=False):
 def compare_19_20(pollutant: POLLUTANT, save=False):
     df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
     df = df[df[DATE_NAME] >= pd.Timestamp(2019, 1, 1, 0).tz_localize(df['Date'].iloc[0].tz)]
-    df = df[df[DATE_NAME].dt.month.isin([1, 2, 3, 4])]
+    df = df[df[DATE_NAME].dt.month.isin([2, 3, 4])]
     df = compare_year_to_year(df)
-    print()
+    df = df.round(2)
+    df.drop(['AirPollutant', 'UnitOfMeasurement'], axis=1, inplace=True)
+    fig = go.Figure(data=[go.Table(
+        header=dict(values=list(df.columns), fill_color='grey', align='center'),
+        cells=dict(values=[df['Countrycode'], df['City'], df['Date'], df['Previous year value'],
+                           df['Year value'], df['diff'], df['diff %']],
+                   fill_color='lightgrey', align='center'))])
+    fig.update_layout(title=f'Difference for {pollutant.name} emissions between 2019 and 2020')
+    fig.show()
 
-    # df = df.round(2)
-    # fig = go.Figure(data=[go.Table(
-    #     header=dict(values=list(df.columns), fill_color='grey', align='center'),
-    #     cells=dict(values=[df['country iso code'], df['city_name'], df['station_european_code'], df[STATISTIC_VALUE],
-    #                        df['mean'], df['diff'], df['diff %']],
-    #                fill_color='lightgrey', align='center'))])
-    # fig.update_layout(title=f'Best stations for {pollutant.name} emissions in 2013')
-    # fig.show()
 
-
-compare_19_20(POLLUTANT.o3)
-
+for pol in POLLUTANT:
+    compare_19_20(pol)

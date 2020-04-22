@@ -28,21 +28,15 @@ for a city and pollutant instead of using the full data set.
 
 Vizualisation of the worst, the best and a mean of all measures per cities and pollutant:
 ![European cities NO2 emissions in 2013](data/plot/stations/stations_plot_no2.png)
-
 ![European cities PM10 emissions in 2013](data/plot/stations/stations_plot_pm10.png)
-
 ![European cities PM2.5 emissions in 2013](data/plot/stations/stations_plot_pm25.png)
-
 ![European cities O3 emissions in 2013](data/plot/stations/stations_plot_o3.png)
 
 
 Best, as in closest to the mean or unique station in a city per pollutant:
 ![Best stations NO2 for each city in 2013](data/plot/stations/best_stations_2013_no2.png)
-
 ![Best stations PM10 for each city in 2013](data/plot/stations/best_stations_2013_pm10.png)
-
 ![Best stations PM25 for each city in 2013](data/plot/stations/best_stations_2013_pm25.png)
-
 ![Best stations O3 for each city in 2013](data/plot/stations/best_stations_2013_o3.png)
 
 
@@ -88,33 +82,34 @@ So I decided to focus on data from 2015 first and remove the older data.
 
 Looking at the whole data set from 2015 to 2020 included:
 ![NO2 Violin Plot](data/plot/emissions/main/violin_plot_no2.png)
-
 ![O3 Violin Plot](data/plot/emissions/main/violin_plot_o3.png)
-
 ![PM10 Violin Plot](data/plot/emissions/main/violin_plot_pm10.png)
-
 ![PM25 Violin Plot](data/plot/emissions/main/violin_plot_pm25.png)
-
 
 Looking at the evolution throughout the years:
 ![NO2 Plot](data/plot/emissions/main/plot_no2.png)
-
 ![O3 Plot](data/plot/emissions/main/plot_o3.png)
-
 ![PM10 Plot](data/plot/emissions/main/plot_pm10.png)
-
 ![PM25 Plot](data/plot/emissions/main/plot_pm25.png)
 There is still missing data for Paris pm2.5 emissions during 2019.
 We can see that the NO2 emissions are lower during the 2020 covid-19 lockdown, while pm2.5 and pm10 seems for some cities only to be lower.
 
+
+## Recent data and covid crisis
 Only looking at 2019 up to now:
 ![NO2 Plot](data/plot/emissions/main/plot_no2_last_year.png)
-
 ![PM10 Plot](data/plot/emissions/main/plot_pm10_last_year.png)
-
 ![PM25 Plot](data/plot/emissions/main/plot_pm25_last_year.png)
 We can see that, as mentioned in the EEA article, the NO2 diminution explained by traffic reduction is clear.
 While other pollutants reduction is not necessarily evident.
+
+Tables with difference between 2020 and 2019 for February, March and April:
+![NO2 Plot](data/plot/emissions/main/no2_diff_19_20.png)
+![PM10 Plot](data/plot/emissions/main/pm10_diff_19_20.png)
+![PM25 Plot](data/plot/emissions/main/pm25_diff_19_20.png)
+
+For NO2 the difference is evident. It is noticeable as well for PM10 and for PM2.5 we are missing some data for Paris and 
+the conclusion is harder to reach with this set of data.
 
 ## Dependencies
 - [Pandas](https://pandas.pydata.org/)
