@@ -1,6 +1,4 @@
 from pathlib import Path
-
-from numpy import datetime64
 from pandas import Timestamp
 from data.constants import POLLUTANT, YEAR
 from src import emissions

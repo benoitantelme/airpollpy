@@ -1,15 +1,10 @@
-import os
-from datetime import datetime
-
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
+from datetime import datetime
 from pathlib import Path
-
 from matplotlib.axes import Axes
-from pandas import DataFrame
-
-from data.constants import POLLUTANT, UNDERSCORE, SPACE, YEAR, CITY
+from data.constants import POLLUTANT, YEAR, CITY
 from src.emissions import get_dataframe, mean_per_day, mean_per_month, create_pollutant_df
 
 
@@ -75,7 +70,7 @@ def plot_violin_pollutant(pollutant: POLLUTANT, save=False):
 
 def plot_pollutant_last_years(pollutant: POLLUTANT, save=False):
     df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
-    df = df[df['Date'] > datetime.strptime('2019-01-01', '%Y-%m-%d').date()]
+    df = df[df['Date'] > pd.Timestamp(2019, 1, 1, 0).tz_localize(df['Date'].iloc[0].tz)]
     plt.subplots(figsize=(14, 6))
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
     axes = sns.lineplot(x="Date", y=f'mean {pollutant.name} (µg/m3)', data=df, hue='city')
@@ -83,18 +78,11 @@ def plot_pollutant_last_years(pollutant: POLLUTANT, save=False):
 
 
 def compare_19_20(pollutant: POLLUTANT, save=False):
-    # df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
-    df = create_pollutant_df(pollutant, "../../data/test/mean/")
-
-    print(df.info())
-
-    df = df[df['Date'] < datetime.strptime('2019-01-01', '%Y-%m-%d').date()]
-    df = df[df['Date'].isin([1, 2, 3, 4])]
+    df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
+    df = df[df['Date'] >= pd.Timestamp(2019, 1, 1, 0).tz_localize(df['Date'].iloc[0].tz)]
+    df = df[df['Date'].dt.month.isin([1, 2, 3, 4])]
     print()
-    # plt.subplots(figsize=(14, 6))
-    # sns.set_style("whitegrid", {'grid.linestyle': '-'})
-    # axes = sns.lineplot(x="Date", y=f'mean {pollutant.name} (µg/m3)', data=df, hue='city')
-    # finalize_plot(axes, f'{pollutant.name} emissions', save, f'plot_{pollutant.name}_last_year.png')
 
 
 compare_19_20(POLLUTANT.o3)
+
