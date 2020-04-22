@@ -1,10 +1,10 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
-from datetime import datetime
+import plotly.graph_objects as go
 from pathlib import Path
 from matplotlib.axes import Axes
-from data.constants import POLLUTANT, YEAR, CITY
+from data.constants import POLLUTANT, YEAR, CITY, CITY_NAME, DATE_NAME
 from src.emissions import get_dataframe, mean_per_day, mean_per_month, create_pollutant_df
 
 
@@ -27,7 +27,7 @@ def plot_mean_per_pol_city(city: CITY, pollutant: POLLUTANT, save=False):
 
     fig, axes = plt.subplots(figsize=(14, 6))
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
-    axes = sns.lineplot(x="Date", y=f'mean {pollutant.name} (µg/m3)', data=df)
+    axes = sns.lineplot(x=DATE_NAME, y=f'mean {pollutant.name} (µg/m3)', data=df)
     axes.set_title(f'{city.name} {pollutant.name} emissions')
     # plt.xticks(rotation=40, ha='right')
     plt.tight_layout()
@@ -56,7 +56,7 @@ def plot_pollutant(pollutant: POLLUTANT, save=False):
     df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
     plt.subplots(figsize=(14, 6))
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
-    axes = sns.lineplot(x="Date", y=f'mean {pollutant.name} (µg/m3)', data=df, hue='city')
+    axes = sns.lineplot(x=DATE_NAME, y=f'mean {pollutant.name} (µg/m3)', data=df, hue=CITY_NAME)
     finalize_plot(axes, f'{pollutant.name} emissions', save, f'plot_{pollutant.name}.png')
 
 
@@ -64,7 +64,7 @@ def plot_violin_pollutant(pollutant: POLLUTANT, save=False):
     df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
     plt.subplots(figsize=(14, 6))
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
-    axes = sns.violinplot(x="city", y=f'mean {pollutant.name} (µg/m3)', data=df, palette='terrain')
+    axes = sns.violinplot(x=CITY_NAME, y=f'mean {pollutant.name} (µg/m3)', data=df, palette='terrain')
     finalize_plot(axes, f'{pollutant.name} emissions', save, f'violin_plot_{pollutant.name}.png')
 
 
@@ -73,15 +73,24 @@ def plot_pollutant_last_years(pollutant: POLLUTANT, save=False):
     df = df[df['Date'] > pd.Timestamp(2019, 1, 1, 0).tz_localize(df['Date'].iloc[0].tz)]
     plt.subplots(figsize=(14, 6))
     sns.set_style("whitegrid", {'grid.linestyle': '-'})
-    axes = sns.lineplot(x="Date", y=f'mean {pollutant.name} (µg/m3)', data=df, hue='city')
+    axes = sns.lineplot(x=DATE_NAME, y=f'mean {pollutant.name} (µg/m3)', data=df, hue=CITY_NAME)
     finalize_plot(axes, f'{pollutant.name} emissions', save, f'plot_{pollutant.name}_last_year.png')
 
 
 def compare_19_20(pollutant: POLLUTANT, save=False):
     df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
-    df = df[df['Date'] >= pd.Timestamp(2019, 1, 1, 0).tz_localize(df['Date'].iloc[0].tz)]
-    df = df[df['Date'].dt.month.isin([1, 2, 3, 4])]
+    df = df[df[DATE_NAME] >= pd.Timestamp(2019, 1, 1, 0).tz_localize(df['Date'].iloc[0].tz)]
+    df = df[df[DATE_NAME].dt.month.isin([1, 2, 3, 4])]
     print()
+
+    df = df.round(2)
+    fig = go.Figure(data=[go.Table(
+        header=dict(values=list(df.columns), fill_color='grey', align='center'),
+        cells=dict(values=[df['country iso code'], df['city_name'], df['station_european_code'], df[STATISTIC_VALUE],
+                           df['mean'], df['diff'], df['diff %']],
+                   fill_color='lightgrey', align='center'))])
+    fig.update_layout(title=f'Best stations for {pollutant.name} emissions in 2013')
+    fig.show()
 
 
 compare_19_20(POLLUTANT.o3)

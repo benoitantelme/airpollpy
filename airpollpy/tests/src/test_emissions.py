@@ -1,9 +1,9 @@
 from pathlib import Path
 from pandas import Timestamp
-from data.constants import POLLUTANT, YEAR
+from data.constants import POLLUTANT, YEAR, DATE_NAME
 from src import emissions
 from src.emissions import concat_two_sets, concat_sets, get_mean_frame, get_dataframe, mean_per_day, mean_per_month, \
-    create_pollutant_df
+    create_pollutant_df, compare_year_to_year
 
 
 def test_get_dataframe():
@@ -57,7 +57,7 @@ def test_mean_per_day():
     expected_mean = df[df['DatetimeBegin'].str.contains('2015-01-01')][measure_name].sum() / 24
 
     df = mean_per_day(df)
-    assert expected_mean.round(2) == df[df["Date"] == first_day][measure_name].item()
+    assert expected_mean.round(2) == df[df[DATE_NAME] == first_day][measure_name].item()
 
 
 def test_mean_per_month():
@@ -66,10 +66,16 @@ def test_mean_per_month():
     expected_mean = df[df['DatetimeBegin'].str.contains('2015-01')][measure_name].sum() / (24 * 31)
 
     df = mean_per_month(df)
-    assert expected_mean.round(2) == df[df["Date"] == first_day][measure_name].item()
+    assert expected_mean.round(2) == df[df[DATE_NAME] == first_day][measure_name].item()
 
 
 def test_create_pollutant_df():
     df = create_pollutant_df(POLLUTANT.o3, "../../data/test/mean/")
     assert len(df.columns) == 6
     assert len(df) == 48
+
+
+# def test_compare_year_to_year():
+#     df = create_pollutant_df(POLLUTANT.o3, "../../data/test/mean/")
+#     compare_year_to_year(df)
+#     print()

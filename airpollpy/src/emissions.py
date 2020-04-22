@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from pandas import DataFrame
 from pathlib import Path
-from data.constants import POLLUTANT, YEAR, CITY
+from data.constants import POLLUTANT, YEAR, CITY, CITY_NAME, DATE_NAME
 
 
 def get_dataframe(path: str, encoding=None) -> DataFrame:
@@ -85,7 +85,7 @@ def create_mean_sets() -> DataFrame:
 
 def set_date(df: DataFrame) -> DataFrame:
     df['DatetimeBegin'] = pd.to_datetime(df['DatetimeBegin'])
-    df['Date'] = df['DatetimeBegin'].apply(lambda x: x.normalize())
+    df[DATE_NAME] = df['DatetimeBegin'].apply(lambda x: x.normalize())
     df.drop('DatetimeBegin', axis=1, inplace=True)
     return df
 
@@ -94,7 +94,7 @@ def mean_per_day(df: DataFrame) -> DataFrame:
     measure_name = df.columns.values[-1]
 
     df = set_date(df)
-    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "Date"],
+    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", DATE_NAME],
                     as_index=False)[measure_name].mean().round(2)
     return df
 
@@ -103,8 +103,8 @@ def mean_per_month(df: DataFrame) -> DataFrame:
     measure_name = df.columns.values[-1]
 
     df = set_date(df)
-    df['Date'] = df['Date'].apply(lambda x: x.replace(day=1))
-    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", "Date"],
+    df[DATE_NAME] = df['Date'].apply(lambda x: x.replace(day=1))
+    df = df.groupby(["Countrycode", "AirPollutant", "UnitOfMeasurement", DATE_NAME],
                     as_index=False)[measure_name].mean().round(2)
     return df
 
@@ -117,6 +117,24 @@ def create_pollutant_df(pollutant: POLLUTANT, main_path: str) -> DataFrame:
             print(path.absolute())
             df_tmp = mean_per_month(get_dataframe(path))
             city_df = pd.concat([city_df, df_tmp])
-        city_df['city'] = city.name
+        city_df[CITY_NAME] = city.name
         df = pd.concat([df, city_df])
     return df
+
+
+def compare_year_to_year(df: DataFrame) -> DataFrame:
+    measure_name = df.columns.values[-2]
+    df['Year'] = df[DATE_NAME].apply(lambda x: x.year)
+    df['DM'] = df[DATE_NAME].apply(lambda x: f'{x.day}-{x.month}')
+    print()
+    df['diff'] = df.groupby([CITY_NAME, 'DM'])[measure_name].transform('diff')
+    print()
+    # df[df[]]
+    # df['diff'] = abs(df['mean'] - df[STATISTIC_VALUE])
+    # df['diff %'] = df['diff'] * 100 / df['mean']
+
+
+# df = create_pollutant_df(POLLUTANT.o3, "../../data/test/mean/")
+# compare_year_to_year(df)
+# print()
+
