@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 from pathlib import Path
 from matplotlib.axes import Axes
 from data.constants import POLLUTANT, YEAR, CITY, CITY_NAME, DATE_NAME
-from src.emissions import get_dataframe, mean_per_day, mean_per_month, create_pollutant_df
+from src.emissions import get_dataframe, mean_per_day, mean_per_month, create_pollutant_df, compare_year_to_year
 
 
 def plot_mean_per_pol_city_year(city: CITY, pollutant: POLLUTANT, year: YEAR):
@@ -81,6 +81,7 @@ def compare_19_20(pollutant: POLLUTANT, save=False):
     df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
     df = df[df[DATE_NAME] >= pd.Timestamp(2019, 1, 1, 0).tz_localize(df['Date'].iloc[0].tz)]
     df = df[df[DATE_NAME].dt.month.isin([1, 2, 3, 4])]
+    df = compare_year_to_year(df)
     print()
 
     # df = df.round(2)
