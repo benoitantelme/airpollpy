@@ -1,11 +1,8 @@
 import os
-from datetime import datetime
-
 import pandas as pd
 from pandas import DataFrame
 from pathlib import Path
-
-from data.constants import POLLUTANT, YEAR, CITY, UNDERSCORE, SPACE, HYPHEN
+from data.constants import POLLUTANT, YEAR, CITY
 
 
 def get_dataframe(path: str, encoding=None) -> DataFrame:
@@ -87,8 +84,8 @@ def create_mean_sets() -> DataFrame:
 
 
 def set_date(df: DataFrame) -> DataFrame:
-    df['DatetimeBegin'] = df['DatetimeBegin'].apply(lambda x: pd.to_datetime(x))
-    df['Date'] = df['DatetimeBegin'].apply(lambda x: x.date())
+    df['DatetimeBegin'] = pd.to_datetime(df['DatetimeBegin'])
+    df['Date'] = df['DatetimeBegin'].apply(lambda x: x.normalize())
     df.drop('DatetimeBegin', axis=1, inplace=True)
     return df
 

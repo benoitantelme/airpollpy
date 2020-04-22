@@ -82,3 +82,19 @@ def plot_pollutant_last_years(pollutant: POLLUTANT, save=False):
     finalize_plot(axes, f'{pollutant.name} emissions', save, f'plot_{pollutant.name}_last_year.png')
 
 
+def compare_19_20(pollutant: POLLUTANT, save=False):
+    # df = create_pollutant_df(pollutant, "../../data/main/cleaned/mean/")
+    df = create_pollutant_df(pollutant, "../../data/test/mean/")
+
+    print(df.info())
+
+    df = df[df['Date'] < datetime.strptime('2019-01-01', '%Y-%m-%d').date()]
+    df = df[df['Date'].isin([1, 2, 3, 4])]
+    print()
+    # plt.subplots(figsize=(14, 6))
+    # sns.set_style("whitegrid", {'grid.linestyle': '-'})
+    # axes = sns.lineplot(x="Date", y=f'mean {pollutant.name} (µg/m3)', data=df, hue='city')
+    # finalize_plot(axes, f'{pollutant.name} emissions', save, f'plot_{pollutant.name}_last_year.png')
+
+
+compare_19_20(POLLUTANT.o3)
