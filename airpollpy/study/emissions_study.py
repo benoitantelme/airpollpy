@@ -83,14 +83,14 @@ def compare_19_20(pollutant: POLLUTANT, save=False):
     df = df[df[DATE_NAME].dt.month.isin([1, 2, 3, 4])]
     print()
 
-    df = df.round(2)
-    fig = go.Figure(data=[go.Table(
-        header=dict(values=list(df.columns), fill_color='grey', align='center'),
-        cells=dict(values=[df['country iso code'], df['city_name'], df['station_european_code'], df[STATISTIC_VALUE],
-                           df['mean'], df['diff'], df['diff %']],
-                   fill_color='lightgrey', align='center'))])
-    fig.update_layout(title=f'Best stations for {pollutant.name} emissions in 2013')
-    fig.show()
+    # df = df.round(2)
+    # fig = go.Figure(data=[go.Table(
+    #     header=dict(values=list(df.columns), fill_color='grey', align='center'),
+    #     cells=dict(values=[df['country iso code'], df['city_name'], df['station_european_code'], df[STATISTIC_VALUE],
+    #                        df['mean'], df['diff'], df['diff %']],
+    #                fill_color='lightgrey', align='center'))])
+    # fig.update_layout(title=f'Best stations for {pollutant.name} emissions in 2013')
+    # fig.show()
 
 
 compare_19_20(POLLUTANT.o3)

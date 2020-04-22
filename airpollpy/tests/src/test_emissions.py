@@ -75,7 +75,8 @@ def test_create_pollutant_df():
     assert len(df) == 48
 
 
-# def test_compare_year_to_year():
-#     df = create_pollutant_df(POLLUTANT.o3, "../../data/test/mean/")
-#     compare_year_to_year(df)
-#     print()
+def test_compare_year_to_year():
+    df = create_pollutant_df(POLLUTANT.o3, "../../data/test/mean/")
+    compare_year_to_year(df)
+    assert len(df.columns) == 9
+    assert len(df) == 48

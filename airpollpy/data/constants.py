@@ -8,3 +8,6 @@ HYPHEN = '-'
 SPACE = ' '
 CITY_NAME = 'City'
 DATE_NAME = 'Date'
+PREVIOUS_YEAR_VALUE = 'Previous year value'
+YEAR_VALUE = 'Year value'
+

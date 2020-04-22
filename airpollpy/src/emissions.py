@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from pandas import DataFrame
 from pathlib import Path
-from data.constants import POLLUTANT, YEAR, CITY, CITY_NAME, DATE_NAME
+from data.constants import POLLUTANT, YEAR, CITY, CITY_NAME, DATE_NAME, PREVIOUS_YEAR_VALUE, YEAR_VALUE
 
 
 def get_dataframe(path: str, encoding=None) -> DataFrame:
@@ -124,17 +124,28 @@ def create_pollutant_df(pollutant: POLLUTANT, main_path: str) -> DataFrame:
 
 def compare_year_to_year(df: DataFrame) -> DataFrame:
     measure_name = df.columns.values[-2]
+
+    # create date info and clean
     df['Year'] = df[DATE_NAME].apply(lambda x: x.year)
     df['DM'] = df[DATE_NAME].apply(lambda x: f'{x.day}-{x.month}')
-    print()
-    df['diff'] = df.groupby([CITY_NAME, 'DM'])[measure_name].transform('diff')
-    print()
-    # df[df[]]
-    # df['diff'] = abs(df['mean'] - df[STATISTIC_VALUE])
-    # df['diff %'] = df['diff'] * 100 / df['mean']
+    first_year = df['Year'].iloc[0]
+    df.reset_index(drop=True, inplace=True)
 
+    # copy first year measurement
+    df[PREVIOUS_YEAR_VALUE] = df[df['Year'] == first_year][measure_name]
+    df[PREVIOUS_YEAR_VALUE] = df.groupby([CITY_NAME, 'DM'], as_index=False)[PREVIOUS_YEAR_VALUE].transform('sum')
 
-# df = create_pollutant_df(POLLUTANT.o3, "../../data/test/mean/")
-# compare_year_to_year(df)
-# print()
+    # calculate the diff on second year
+    df = df[df['Year'] != first_year]
+    df[YEAR_VALUE] = df[measure_name]
+    df['diff'] = df[YEAR_VALUE] - df[PREVIOUS_YEAR_VALUE]
+    df['diff %'] = df['diff'] * 100 / df[PREVIOUS_YEAR_VALUE]
+
+    # cleanup
+    df.drop(measure_name, axis=1, inplace=True)
+    df.drop('DM', axis=1, inplace=True)
+    df.drop('Year', axis=1, inplace=True)
+
+    return df
+
 
